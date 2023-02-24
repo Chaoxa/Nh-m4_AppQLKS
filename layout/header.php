@@ -53,6 +53,8 @@
                                                     </div>
                                                 </div>
                                             </form>
+                                            <script src="public/js/main.js"></script>
+
                                         </div>
                                     </li>
                                 </ul>

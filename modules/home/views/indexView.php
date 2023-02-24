@@ -184,23 +184,6 @@
 </div>
 </div>
 </div>
-<script>
-    const loginBtn = document.getElementById("login-btn");
-    const loginForm = document.getElementById("login-form");
-
-    loginBtn.addEventListener("click", function() {
-        if (loginForm.style.display === "none") {
-            loginForm.style.display = "block";
-        } else {
-            loginForm.style.display = "none";
-        }
-    });
-
-    window.addEventListener('scroll', function() {
-        loginForm.style.display = "none";
-
-    });
-</script>
 <script src="public/js/jquery.min.js"></script>
 <script>
     $(document).ready(function() {

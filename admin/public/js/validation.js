@@ -18,10 +18,15 @@ function Validator(options) {
     }
     if (errorMessage) {
       errorElement.innerText = errorMessage;
-      inputElement.parentElement.classList.add("text-warning");
+      inputElement.parentElement
+        .querySelector(".form-message")
+        .classList.add("text-danger");
+      console.log(inputElement.parentElement);
     } else {
       errorElement.innerText = "";
-      inputElement.parentElement.classList.remove("text-warning");
+      inputElement.parentElement
+        .querySelector(".form-message")
+        .classList.remove("text-danger");
     }
 
     return !errorMessage;
@@ -32,6 +37,14 @@ function Validator(options) {
   if (formElement) {
     formElement.onsubmit = function (e) {
       e.preventDefault();
+      $("<input>")
+        .attr({
+          type: "hidden",
+          name: "btn-add",
+          value: "Thêm mới",
+        })
+        .appendTo(this);
+      this.submit();
 
       var isFormValid = true;
 

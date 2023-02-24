@@ -32,14 +32,16 @@
                     Thêm phòng
                 </div>
                 <div class="card-body">
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="" method="POST" enctype="multipart/form-data" id="form-1">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="col-md-12 p-0">
                                     <div class="form-group">
                                         <label for="hotel_name"><b>Tên phòng</b></label>
                                         <input class="form-control" type="text" name="hotel_name" id="hotel_name" value="<?php echo set_value('hotel_name') ?>">
+                                        <span class="form-message"></span>
                                         <?php echo form_error('hotel_name') ?>
+
                                     </div>
                                 </div>
                                 <div class="col-md-12 p-0">
@@ -48,7 +50,9 @@
                                             <div class="form-group">
                                                 <label for="old_price"><b>Giá phòng</b><span class="text-danger">(*)</span></label>
                                                 <input type="text" name="old_price" placeholder="VNĐ" class="form-control" onkeyup="count()" id="old_price" value="<?php echo set_value('old_price') ?>">
+                                                <span class="form-message"></span>
                                                 <?php echo form_error('old_price') ?>
+
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -110,16 +114,21 @@
                         <div class="col-md-6 mb-3 p-0">
                             <label for="new_price" class="text-success"><b>Thành tiền: </b><span class="text-danger">(*)</span></label>
                             <input type="text" id="new_price" name="new_price" class="form-control m-0" value="<?php echo set_value('new_price') ?>">
+                            <span class="form-message"></span>
+                            <?php echo form_error('new_price') ?>
+
                         </div>
                         <div class="form-group">
                             <label for="desc"><b>Mô tả phòng</b></label>
                             <textarea name="desc" class="form-control" id="desc" cols="30" rows="10"><?php echo set_value('desc') ?></textarea>
-                            <?php echo form_error('desc') ?>
+                            <span class="form-message"></span>
                         </div>
                         <div class="form-group">
                             <label for="detail"><b>Chi tiết phòng</b></label>
                             <textarea name="detail" class="form-control" id="detail" cols="30" rows="5"><?php echo set_value('detail') ?></textarea>
+                            <span class="form-message"></span>
                             <?php echo form_error('detail') ?>
+
                         </div>
 
 
@@ -127,7 +136,7 @@
                             <div class="form-group">
                                 <label for=""><b>Danh mục</b></label>
                                 <select class="form-control" id="" name="hotel_cat">
-                                    <option disabled>---Danh mục khách sạn---</option>
+                                    <option>---Danh mục khách sạn---</option>
                                     <?php foreach ($list_hotel as $hotel) { ?>
                                         <option value="<?php echo $hotel['id'] ?>">
                                             <?php echo $hotel['name'] ?>
@@ -160,6 +169,21 @@
         </div>
     </div>
 </div>
+<script src="public/js/validation.js"></script>
+<script>
+    Validator({
+        errorSelector: '.form-message',
+        form: '#form-1',
+        rules: [
+            Validator.isRequired('#hotel_name', 'Không được để trống tên phòng!'),
+            Validator.isRequired('#old_price', 'Không được để trống giá tiền!'),
+            Validator.isRequired('#new_price', 'Không được để trống thành tiền!'),
+            Validator.isRequired('#desc', 'Không được để trống mô tả phòng!'),
+            Validator.isRequired('#detail', 'Không được để trống chi tiết phòng!'),
+            Validator.isRequired('#hotel_cat', 'Không được để trống danh mục khách sạn!'),
+        ]
+    });
+</script>
 <script>
     var inputFile = document.querySelector("#file_upload")
 
