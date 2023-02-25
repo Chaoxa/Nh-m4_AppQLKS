@@ -54,7 +54,7 @@
             <div class="col-md-6 reg-form">
                 <h2 class="text-center text-white">Đăng ký thành viên</h2>
                 <p class="text-center text-white">Đặt phòng cùng nhóm 4❤️</p>
-                <form action="" method="post" id="form-1">
+                <form action="" method="POST" id="form-1">
                     <div class="form-group">
                         <label for="fullname" class="text-white">Họ và tên</label>
                         <input type="text" id="fullname" name="fullname" class="form-control" placeholder="VD:Trần Quý">

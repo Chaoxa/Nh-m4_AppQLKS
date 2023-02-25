@@ -49,57 +49,36 @@ function loginAction()
 function regAction()
 {
     $avt = 'https://c2.staticflickr.com/8/7628/27739307291_c43b62d5df_b.jpg';
-    $date = date("d/m/Y");
-    global $error, $fullname, $usernamee, $email, $password, $confirm_password, $tel, $address, $control, $notify;
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
+    $time = date("d/m/Y") . ' | ' . date('H:i');
+    global $error, $fullname, $username, $password, $confirm_password, $tel, $address, $control, $notify;
     if (isset($_POST['btn-reg'])) {
         $error = array();
-        if (empty($_POST['fullname'])) {
-            $error['fullname'] = 'Không được để trống tên!';
-        } else {
+        if (!empty($_POST['fullname'])) {
             $fullname = $_POST['fullname'];
         }
-
-        if (empty($_POST['username'])) {
-            $error['usernamee'] = 'Không được để trống tên đăng nhập!';
-        } else {
+        if (!empty($_POST['username'])) {
             $usernamee = $_POST['username'];
         }
-        if (empty($_POST['password'])) {
-            $error['password'] = 'Không được để trống mật khẩu!';
-        } else {
+        if (!empty($_POST['password'])) {
             $password = $_POST['password'];
         }
-        if (empty($_POST['confirm-password'])) {
-            $error['confirm-password'] = 'Không được để trống xác nhận mật khẩu!';
-        } else {
-            $confirm_password = $_POST['confirm-password'];
-        }
-        if (user_exists($usernamee)) {
+        if (user_exists($username)) {
             $error['login'] = "Tài khoản đã tồn tại trong hệ thống";
-        }
-        if (empty($error['password']) && empty($error['confirm-password'])) {
-            if ($confirm_password != $password) {
-                $error['confirm'] = 'Mật khẩu xác nhận không khớp';
-            }
         }
         // show_array($error);
         $username = user_login();
         if (empty($error)) {
             $data = array(
                 'fullname' => $fullname,
-                'control' => $control,
-                'username' => $usernamee,
-                'email' => $email,
-                'tel' => $tel,
-                'address' => $address,
-                'date_reg' => $date,
+                'username' => $username,
+                'date_reg' => $time,
                 'password' => md5($password),
                 'avt' => $avt,
-                'creator' => $username
             );
-            add_user_login(user_login(), $data);
+            db_insert('guest', $data);
             $notify = array();
-            $notify['add_success'] = "Đã thêm admin thành công";
+            $notify['add_success'] = "Đã đăng ký tài khoản thành công";
         }
     }
     load_view('reg');

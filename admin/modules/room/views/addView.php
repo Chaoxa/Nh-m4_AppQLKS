@@ -40,8 +40,6 @@
                                         <label for="hotel_name"><b>Tên phòng</b></label>
                                         <input class="form-control" type="text" name="hotel_name" id="hotel_name" value="<?php echo set_value('hotel_name') ?>">
                                         <span class="form-message"></span>
-                                        <?php echo form_error('hotel_name') ?>
-
                                     </div>
                                 </div>
                                 <div class="col-md-12 p-0">
@@ -51,7 +49,6 @@
                                                 <label for="old_price"><b>Giá phòng</b><span class="text-danger">(*)</span></label>
                                                 <input type="text" name="old_price" placeholder="VNĐ" class="form-control" onkeyup="count()" id="old_price" value="<?php echo set_value('old_price') ?>">
                                                 <span class="form-message"></span>
-                                                <?php echo form_error('old_price') ?>
 
                                             </div>
                                         </div>
@@ -115,7 +112,6 @@
                             <label for="new_price" class="text-success"><b>Thành tiền: </b><span class="text-danger">(*)</span></label>
                             <input type="text" id="new_price" name="new_price" class="form-control m-0" value="<?php echo set_value('new_price') ?>">
                             <span class="form-message"></span>
-                            <?php echo form_error('new_price') ?>
 
                         </div>
                         <div class="form-group">
@@ -127,8 +123,6 @@
                             <label for="detail"><b>Chi tiết phòng</b></label>
                             <textarea name="detail" class="form-control" id="detail" cols="30" rows="5"><?php echo set_value('detail') ?></textarea>
                             <span class="form-message"></span>
-                            <?php echo form_error('detail') ?>
-
                         </div>
 
 
@@ -161,6 +155,7 @@
                                 </label>
                             </div>
                         </div>
+                        <input type="text" name="btn-add" hidden value="Thêm mới">
                         <button type="submit" class="btn btn-primary" name="btn-add">Thêm mới</button>
                     </form>
                     <strong><?php echo notify('add_success') ?></strong>
@@ -180,7 +175,7 @@
             Validator.isRequired('#new_price', 'Không được để trống thành tiền!'),
             Validator.isRequired('#desc', 'Không được để trống mô tả phòng!'),
             Validator.isRequired('#detail', 'Không được để trống chi tiết phòng!'),
-            Validator.isRequired('#hotel_cat', 'Không được để trống danh mục khách sạn!'),
+            // Validator.isRequired('#hotel_cat', 'Không được để trống danh mục khách sạn!'),
         ]
     });
 </script>

@@ -37,14 +37,6 @@ function Validator(options) {
   if (formElement) {
     formElement.onsubmit = function (e) {
       e.preventDefault();
-      $("<input>")
-        .attr({
-          type: "hidden",
-          name: "btn-add",
-          value: "Thêm mới",
-        })
-        .appendTo(this);
-      this.submit();
 
       var isFormValid = true;
 
