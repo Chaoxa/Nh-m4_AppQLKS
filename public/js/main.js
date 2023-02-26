@@ -12,3 +12,10 @@ loginBtn.addEventListener("click", function () {
 window.addEventListener("scroll", function () {
   loginForm.style.display = "none";
 });
+
+Validator({
+  errorSelector: ".form-message",
+  form: "#form-header",
+  color: "text-danger",
+  rules: [Validator.isRequired("#username"), Validator.isRequired("#password")],
+});

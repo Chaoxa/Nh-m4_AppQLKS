@@ -1,6 +1,15 @@
 <?php
 
-function base_url($url = "") {
+function base_url($url = "")
+{
     global $config;
-    return $config['base_url'].$url;
+    return $config['base_url'] . $url;
+}
+
+
+function redirect($url)
+{
+    if (!empty($url)) {
+        header("location: $url");
+    }
 }

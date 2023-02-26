@@ -1,0 +1,49 @@
+.user-avatar img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid rgb(0, 200, 255);
+}
+
+.user-avatar img:hover {
+  border: 2px solid red;
+  transition: all 0.5s ease-out;
+}
+
+.user-avatar {
+  position: relative;
+}
+
+.user-menu {
+  display: none;
+  position: absolute;
+  top: 130%;
+  right: 0;
+  width: 150px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 4;
+  border-radius: 5px;
+}
+
+.user-menu a {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.user-menu a:hover {
+  color: #fff;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 114, 121, 1) 46%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  transition: all 0.3s;
+}

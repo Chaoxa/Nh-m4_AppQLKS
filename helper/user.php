@@ -29,7 +29,6 @@ function user_login()
 }
 
 //
-
 function info_user($field = 'id')
 {
     global $list_user;
@@ -47,7 +46,7 @@ function info_user($field = 'id')
 
 function get_field($field_get)
 {
-    $list_guest = db_fetch_array("SELECT * FROM `guest` WHERE 1");
+    $list_guest = db_fetch_array('SELECT * FROM `guest` WHERE 1');
     // show_array($list_guest);
     if (isset($_SESSION['is_login'])) {
         foreach ($list_guest as $field) {

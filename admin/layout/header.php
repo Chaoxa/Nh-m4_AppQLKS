@@ -39,3 +39,6 @@
                 </div>
             </div>
         </nav>
+        </ul>
+    </div>
+    <div id="wp-content">

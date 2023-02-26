@@ -75,7 +75,9 @@
                         <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Xác thực mật khẩu">
                         <b class="form-message"></b>
                     </div>
+                    <input type="text" name="btn-reg" hidden>
                     <button type="submit" class="btn btn-primary">Đăng ký</button>
+                    <?php echo form_error('login') ?>
                 </form>
             </div>
         </div>
@@ -85,12 +87,12 @@
 <script>
 
 </script>
-<script src="public/js/validation.js"></script>
 
 <script>
     Validator({
         errorSelector: '.form-message',
         form: '#form-1',
+        color: 'text-warning',
         rules: [
             Validator.isRequired('#fullname'),
             Validator.isRequired('#username'),

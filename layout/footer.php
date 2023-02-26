@@ -30,6 +30,11 @@
                     <b>Trần Quang Quý</b>
                 </a></div>
             <div>
+                <div>
+                    <a href="" class="text-white">
+                        <b>Nguyễn Hoàng Anh</b>
+                    </a>
+                </div>
                 <a href="" class="text-white">
                     <b>Phạm Tiến Đạt</b>
                 </a>
@@ -39,11 +44,7 @@
                     <b>Trần Văn Hùng</b>
                 </a>
             </div>
-            <div>
-                <a href="" class="text-white">
-                    <b>Nguyễn Hoàng Anh</b>
-                </a>
-            </div>
+
             <div>
                 <a href="" class="text-white">
                     <b>Hoàng Minh Ngọc</b>

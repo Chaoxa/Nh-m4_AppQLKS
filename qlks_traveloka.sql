@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 24, 2023 lúc 10:15 PM
+-- Thời gian đã tạo: Th2 26, 2023 lúc 07:40 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -36,17 +36,17 @@ CREATE TABLE `guest` (
   `tel` varchar(30) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `avt` varchar(1000) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `date_reg` varchar(20) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `address` varchar(50) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL
+  `address` varchar(50) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `coin` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `guest`
 --
 
-INSERT INTO `guest` (`username`, `password`, `users_id`, `fullname`, `email`, `tel`, `avt`, `date_reg`, `address`) VALUES
-('Quycute2003', '01e6cd1b208fb838b066b8d478f7fec2', 92, 'Trần Quang Quý', 'tranquy52003@gmail.com', '0375284572', 'public/uploads/avtfb.jpg', '01/09/2022', 'Hà Nội'),
-('Tungbeng2003', '01e6cd1b208fb838b066b8d478f7fec2', 111, 'Nguyễn Viết Tùng', 'tungnguyenviet23062003@gmail.com', '0375284572', 'https://c2.staticflickr.com/8/7628/27739307291_c43b62d5df_b.jpg', '29/09/2022', 'Thôn Đình'),
-('Phancuong1988', '01e6cd1b208fb838b066b8d478f7fec2', 112, 'Phan Văn Cương', 'chaoxa@yahoo.com', '0868690603', 'https://c2.staticflickr.com/8/7628/27739307291_c43b62d5df_b.jpg', '29/09/2022', 'TP Hồ Chí Minh');
+INSERT INTO `guest` (`username`, `password`, `users_id`, `fullname`, `email`, `tel`, `avt`, `date_reg`, `address`, `coin`) VALUES
+('Chaoxa2003', '01e6cd1b208fb838b066b8d478f7fec2', 113, 'Trần Quang Quý', NULL, NULL, 'public/uploads/avt_zalo.jpg', '25/02/2023 | 10:17', NULL, 6902),
+('Quycute2003', '01e6cd1b208fb838b066b8d478f7fec2', 114, 'Trần Quang Quý', NULL, NULL, 'https://c2.staticflickr.com/8/7628/27739307291_c43b62d5df_b.jpg', '25/02/2023 | 10:20', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -73,6 +73,30 @@ INSERT INTO `tbl_hotel` (`id`, `name`, `thumb_main`, `address`, `creator`, `time
 (12, 'Khách sạn InterContinental Hanoi Westlake', 'admin/public/uploads/hotel-5.jpg', 'Hà Nội', 'Quycute2003', '23/02/2023 | 00:21'),
 (13, 'Khách sạn InterContinental Saigon ', 'admin/public/uploads/hotel-4.jpg', 'Đà Nẵng', 'Quycute2003', '23/02/2023 | 00:22'),
 (14, 'Khách sạn Sofitel Legend Metropole Thanh Hóa', 'admin/public/uploads/hotel-3.jpg', 'Thanh Hóa', 'Quycute2003', '23/02/2023 | 00:22');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_order_coin`
+--
+
+CREATE TABLE `tbl_order_coin` (
+  `id` int(10) NOT NULL,
+  `guest_parent` int(10) NOT NULL,
+  `amount_coin` varchar(10) NOT NULL,
+  `status` enum('0','1') NOT NULL,
+  `time` varchar(50) NOT NULL,
+  `code` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_order_coin`
+--
+
+INSERT INTO `tbl_order_coin` (`id`, `guest_parent`, `amount_coin`, `status`, `time`, `code`) VALUES
+(21, 114, '1500', '0', '27/02/2023 | 00:32', 'nhom-4_003'),
+(23, 113, '3451', '1', '27/02/2023 | 00:35', 'nhom-4_003'),
+(24, 113, '3000', '0', '27/02/2023 | 01:36', 'nhom-4_013');
 
 -- --------------------------------------------------------
 
@@ -145,6 +169,12 @@ ALTER TABLE `tbl_hotel`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `tbl_order_coin`
+--
+ALTER TABLE `tbl_order_coin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `tbl_room`
 --
 ALTER TABLE `tbl_room`
@@ -165,13 +195,19 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT cho bảng `guest`
 --
 ALTER TABLE `guest`
-  MODIFY `users_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `users_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_hotel`
 --
 ALTER TABLE `tbl_hotel`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_order_coin`
+--
+ALTER TABLE `tbl_order_coin`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_room`

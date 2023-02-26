@@ -161,7 +161,7 @@
                             <a href="#" class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
-                   
+
                 </tbody>
             </table>
             <nav aria-label="Page navigation example">

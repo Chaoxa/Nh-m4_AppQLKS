@@ -18,10 +18,14 @@ function Validator(options) {
     }
     if (errorMessage) {
       errorElement.innerText = errorMessage;
-      inputElement.parentElement.classList.add("text-warning");
+      inputElement.parentElement
+        .querySelector(".form-message")
+        .classList.add(options.color);
     } else {
       errorElement.innerText = "";
-      inputElement.parentElement.classList.remove("text-warning");
+      inputElement.parentElement
+        .querySelector(".form-message")
+        .classList.remove("text-danger");
     }
 
     return !errorMessage;

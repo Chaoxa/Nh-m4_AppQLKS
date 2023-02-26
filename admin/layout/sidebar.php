@@ -61,7 +61,7 @@
             <ul class="sub-menu">
                 <li><a href="?view=list-order">Thông tin khách hàng</a></li>
                 <li><a href="?view=list-order">Danh sách tài khoản </a></li>
-                <li><a href="?view=list-order">Nạp tiền tài khoản</a></li>
+                <li><a href="?mod=guest&action=index">Nạp tiền tài khoản</a></li>
             </ul>
         </li>
         <li class="nav-link">
