@@ -1,0 +1,19 @@
+.convenient li {
+  list-style: none;
+}
+.convenient {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+}
+.convenient li:first-child {
+  padding: 0px;
+}
+.order {
+  text-align: right;
+}
+
+.convenient li img {
+  max-width: 30px;
+  height: auto;
+}

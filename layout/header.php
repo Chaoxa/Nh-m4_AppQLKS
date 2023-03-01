@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="public/slider/owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="public/css/home.css">
     <link rel="stylesheet" href="public/css/coin.css">
+    <link rel="stylesheet" href="public/css/detail.css">
     <title>Team-4 Traveloka</title>
 </head>
 
@@ -35,7 +36,7 @@
                                     <?php if (is_login()) { ?>
                                         <li class="icon-coin"><span class="p-1"><?php echo get_field('coin') ?> Coin</span></li>
                                         <div class="user-avatar">
-                                            <img src="<?php echo get_field('avt') ?>" alt="User Avatar">
+                                            <img src="admin/<?php echo get_field('avt') ?>" alt="User Avatar">
                                             <div class="user-menu">
                                                 <a href="?mod=coin&action=recharge">Nạp coin</a>
                                                 <a href="?mod=users&action=logout">Đăng xuất</a>

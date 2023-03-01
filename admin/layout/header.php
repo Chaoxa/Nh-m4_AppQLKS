@@ -39,6 +39,5 @@
                 </div>
             </div>
         </nav>
-        </ul>
-    </div>
-    <div id="wp-content">
+        <!-- end nav  -->
+        <div id="page-body" class="d-flex">

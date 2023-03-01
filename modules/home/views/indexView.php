@@ -149,7 +149,7 @@
                     <?php foreach ($list_hotels as $hotel) { ?>
                         <div class="row card-info">
                             <div class="thumb-main col-md-2">
-                                <a href=""><img src="<?php echo $hotel['thumb_main_room'] ?>" alt="" width="132px" height="176px"></a>
+                                <a href="?mod=room&action=room_detail&id=<?php echo $hotel['room_id'] ?>"><img src="<?php echo $hotel['thumb_main_room'] ?>" alt="" width="132px" height="176px"></a>
                             </div>
                             <div class="info ml-4 col-md-6">
                                 <h5 class="name-hotel my-1"><a href=""><?php echo $hotel['room_name'] ?></a></h5>
@@ -171,7 +171,7 @@
                                 </div>
                                 <div class="old-price my-1"><del><?php echo price($hotel['old_price'], 'VNĐ') ?></del></div>
                                 <div class="new-price my-1"><b class="text-danger"><?php echo price($hotel['new_price'], 'VNĐ') ?></b></div>
-                                <a href="?mod=room&action=room_detail" class="detail-hotel my-1"><b>Xem chi tiết</b> <i class="bi bi-three-dots"></i></a>
+                                <a href="?mod=room&action=room_detail&id=<?php echo $hotel['room_id'] ?>" class="detail-hotel my-1"><b>Xem chi tiết</b> <i class="bi bi-three-dots"></i></a>
                                 <div class="my-1"><b>Liên hệ với chúng tôi?</b></div>
                                 <a href="https://www.facebook.com/thaiquymomo"><i class="bi bi-facebook text-primary"></i></a>
                             </div>

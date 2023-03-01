@@ -118,26 +118,13 @@
                             <li><a href="?view=list-user">Danh sách</a></li>
                         </ul>
                     </li>
-
-                    <!-- <li class="nav-link"><a>Bài viết</a>
-                        <ul class="sub-menu">
-                            <li><a>Thêm mới</a></li>
-                            <li><a>Danh sách</a></li>
-                            <li><a>Thêm danh mục</a></li>
-                            <li><a>Danh sách danh mục</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-link"><a>Sản phẩm</a></li>
-                    <li class="nav-link"><a>Đơn hàng</a></li>
-                    <li class="nav-link"><a>Hệ thống</a></li> -->
-
                 </ul>
             </div>
             <div id="wp-content">
-                <?php 
-                $view=isset($_GET['view'])?$_GET['view']:'dashboard';
+                <?php
+                $view = isset($_GET['view']) ? $_GET['view'] : 'dashboard';
                 require "views/{$view}.php";
-                
+
                 ?>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <?php get_header() ?>
+<?php get_sidebar() ?>
 <div id="content" class="container-fluid">
-    <?php get_sidebar() ?>
     <div class="card">
         <div class="card-header font-weight-bold">
             Thêm khách sạn

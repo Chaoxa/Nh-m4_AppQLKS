@@ -4,11 +4,12 @@
         border-radius: 10px;
     }
 </style>
+<?php get_sidebar() ?>
+
 <div id="content" class="container-fluid">
-    <?php get_sidebar() ?>
     <div class="card">
         <div class="card-header font-weight-bold d-flex justify-content-between align-items-center">
-            <h5 class="m-0 ">Danh sách sản phẩm</h5>
+            <h5 class="m-0 ">Danh sách nạp coin</h5>
             <div class="form-search form-inline">
                 <form action="#" class="d-flex">
                     <input type="" class="form-control form-search" placeholder="">
@@ -37,7 +38,7 @@
                             <input name="checkall" type="checkbox">
                         </th>
                         <th scope="col">#</th>
-                        <th scope="col">Mã đơn</th>
+                        <th scope="col">Ảnh</th>
                         <th scope="col">Tên tài khoản</th>
                         <th scope="col">Lượng coin</th>
                         <th scope="col">Tổng tiền</th>
@@ -56,7 +57,7 @@
                                 <input type="checkbox">
                             </td>
                             <td><?php echo $temp ?></td>
-                            <td><img src="<?php echo $value['avt'] ?>" alt="" width="100px"></td>
+                            <td><img src="<?php echo $value['avt'] ?>" alt="error" width="100px"></td>
                             <td><a href="#"><?php echo $value['username'] ?></a></td>
                             <td><?php echo $value['amount_coin'] ?></td>
                             <td><?php echo currency_format($value['amount_coin'] * 1000, 'đ') ?></td>
@@ -88,3 +89,4 @@
         </div>
     </div>
 </div>
+<?php get_footer() ?>

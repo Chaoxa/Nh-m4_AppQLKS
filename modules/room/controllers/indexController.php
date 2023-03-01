@@ -8,5 +8,8 @@ function construct()
 
 function room_detailAction()
 {
-    load_view('detail');
+    $id = $_GET['id'];
+    $room_info = get_detail_room($id);
+    $data['room_info'] = $room_info;
+    load_view('detail', $data);
 }
