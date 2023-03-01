@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 01, 2023 lúc 06:41 AM
+-- Thời gian đã tạo: Th3 01, 2023 lúc 10:10 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -46,7 +46,7 @@ CREATE TABLE `guest` (
 
 INSERT INTO `guest` (`username`, `password`, `users_id`, `fullname`, `email`, `tel`, `avt`, `date_reg`, `address`, `coin`) VALUES
 ('Chaoxa2003', '01e6cd1b208fb838b066b8d478f7fec2', 113, 'Trần Quang Quý', NULL, NULL, 'public/uploads/avt_zalo.jpg', '25/02/2023 | 10:17', NULL, 6902),
-('Quycute2003', '01e6cd1b208fb838b066b8d478f7fec2', 114, 'Trần Quang Quý', NULL, NULL, 'admin/public/uploads/avtfb.jpg', '25/02/2023 | 10:20', NULL, 1500);
+('Quycute2003', '01e6cd1b208fb838b066b8d478f7fec2', 114, 'Trần Quang Quý', NULL, NULL, 'public/uploads/avtfb.jpg', '25/02/2023 | 10:20', NULL, 102500);
 
 -- --------------------------------------------------------
 
@@ -94,12 +94,8 @@ CREATE TABLE `tbl_order_coin` (
 --
 
 INSERT INTO `tbl_order_coin` (`id`, `guest_parent`, `amount_coin`, `status`, `time`, `code`) VALUES
-(21, 114, '1500', '1', '27/02/2023 | 00:32', 'nhom-4_003'),
-(23, 113, '3451', '1', '27/02/2023 | 00:35', 'nhom-4_003'),
-(24, 113, '3000', '0', '27/02/2023 | 01:36', 'nhom-4_013'),
-(25, 113, '1000', '0', '28/02/2023 | 22:51', 'nhom-4_225'),
-(26, 113, '3000', '0', '01/03/2023 | 10:42', 'nhom-4_104'),
-(27, 113, '1001', '0', '01/03/2023 | 10:43', 'nhom-4_104');
+(28, 114, '1000', '1', '02/03/2023 | 02:26', 'nhom-4_022'),
+(29, 114, '100000', '1', '02/03/2023 | 03:31', 'nhom-4_033');
 
 -- --------------------------------------------------------
 
@@ -108,7 +104,7 @@ INSERT INTO `tbl_order_coin` (`id`, `guest_parent`, `amount_coin`, `status`, `ti
 --
 
 CREATE TABLE `tbl_room` (
-  `id` int(10) NOT NULL,
+  `room_id` int(10) NOT NULL,
   `room_name` varchar(200) NOT NULL,
   `thumb_main_room` text NOT NULL,
   `thumb_detail` text NOT NULL,
@@ -126,10 +122,10 @@ CREATE TABLE `tbl_room` (
 -- Đang đổ dữ liệu cho bảng `tbl_room`
 --
 
-INSERT INTO `tbl_room` (`id`, `room_name`, `thumb_main_room`, `thumb_detail`, `creator`, `time`, `parent_hotel`, `old_price`, `discount`, `new_price`, `hotel_desc`, `hotel_detail`) VALUES
-(7, 'Phòng TQ 1', 'admin/public/uploads/thumb_main_room1.jpg', '[\"admin\\/public\\/uploads\\/thumb_main_room1.jpg\",\"admin\\/public\\/uploads\\/thumb_room1_detail1.jpg\",\"admin\\/public\\/uploads\\/thumb_room1_detail2.jpg\",\"admin\\/public\\/uploads\\/thumb_room1_detail3.jpg\"]', 'Quycute2003', '24/02/2023 | 01:47', 12, '515000', '32', '350200', 'Phòng đẹp', 'Phòng có 5 giường ngủ'),
-(8, 'Phòng TQ 2', 'admin/public/uploads/thumb_main_room2.jpg', '[\"admin\\/public\\/uploads\\/thumb_room2_detail3.jpg\",\"admin\\/public\\/uploads\\/thumb_main_room2.jpg\",\"admin\\/public\\/uploads\\/thumb_room2_detail1.jpg\",\"admin\\/public\\/uploads\\/thumb_room2_detail2.jpg\"]', 'Quycute2003', '24/02/2023 | 01:52', 12, '899000', '42', '521420', 'Phòng đẹp', 'Phòng có 5 giường ngủ'),
-(9, 'Phòng PĐ 1', 'admin/public/uploads/thumb_room3_detail1.jpg', '[\"admin\\/public\\/uploads\\/thumb_room2_detail2.jpg\",\"admin\\/public\\/uploads\\/thumb_room2_detail3.jpg\",\"admin\\/public\\/uploads\\/thumb_room3_detail1.jpg\",\"admin\\/public\\/uploads\\/thumb_room3_detail2.jpg\"]', 'Quycute2003', '24/02/2023 | 02:31', 13, '1000000', '50', '500000', 'Phòng đẹp', 'Phòng có 5 giường ngủ'),
+INSERT INTO `tbl_room` (`room_id`, `room_name`, `thumb_main_room`, `thumb_detail`, `creator`, `time`, `parent_hotel`, `old_price`, `discount`, `new_price`, `hotel_desc`, `hotel_detail`) VALUES
+(7, 'Phòng TQ 1', 'admin/public/uploads/thumb_main_room1.jpg', '[\"admin\\/public\\/uploads\\/thumb_main_room1.jpg\",\"admin\\/public\\/uploads\\/thumb_room1_detail1.jpg\"]', 'Quycute2003', '24/02/2023 | 01:47', 12, '515000', '32', '350200', 'Phòng đẹp', 'Phòng có 5 giường ngủ'),
+(8, 'Phòng TQ 2', 'admin/public/uploads/thumb_main_room2.jpg', '[\"admin\\/public\\/uploads\\/thumb_room2_detail3.jpg\",\"admin\\/public\\/uploads\\/thumb_main_room2.jpg\",\"admin\\/public\\/uploads\\/thumb_room2_detail1.jpg\"]', 'Quycute2003', '24/02/2023 | 01:52', 12, '899000', '42', '521420', 'Phòng đẹp', 'Phòng có 5 giường ngủ'),
+(9, 'Phòng PĐ 1', 'admin/public/uploads/thumb_room3_detail1.jpg', '[\"admin\\/public\\/uploads\\/thumb_room2_detail2.jpg\",\"admin\\/public\\/uploads\\/thumb_room2_detail3.jpg\",\"admin\\/public\\/uploads\\/thumb_room3_detail1.jpg\"]', 'Quycute2003', '24/02/2023 | 02:31', 13, '1000000', '50', '500000', 'Phòng đẹp', 'Phòng có 5 giường ngủ'),
 (24, 'Room PĐ 1', 'admin/public/uploads/hotel-2.jpg', '[\"admin\\/public\\/uploads\\/hotel-5.jpg\"]', '', '24/02/2023 | 09:49', 10, '1000000', '50', '500000', 'Phòng đẹp', 'Phòng có 5 giường ngủ'),
 (33, 'Trần Quang Quý', 'admin/public/uploads/thumb_main_room3.jpg', '[\"admin\\/public\\/uploads\\/hotel-5.jpg\"]', 'Quycute2003', '25/02/2023 | 04:04', 10, '515000', '32', '350200', 'sdfsd', 'sdfsd');
 
@@ -181,7 +177,7 @@ ALTER TABLE `tbl_order_coin`
 -- Chỉ mục cho bảng `tbl_room`
 --
 ALTER TABLE `tbl_room`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`room_id`),
   ADD KEY `parent_hotel` (`parent_hotel`);
 
 --
@@ -210,13 +206,13 @@ ALTER TABLE `tbl_hotel`
 -- AUTO_INCREMENT cho bảng `tbl_order_coin`
 --
 ALTER TABLE `tbl_order_coin`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_room`
 --
 ALTER TABLE `tbl_room`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `room_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_users`
