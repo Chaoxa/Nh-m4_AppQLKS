@@ -171,7 +171,7 @@
                                 </div>
                                 <div class="old-price my-1"><del><?php echo price($hotel['old_price'], 'VNĐ') ?></del></div>
                                 <div class="new-price my-1"><b class="text-danger"><?php echo price($hotel['new_price'], 'VNĐ') ?></b></div>
-                                <a href="?mod=room&action=room_detail" class="detail-hotel my-1"><b>Xem chi tiết</b> <i class="bi bi-three-dots"></i></a>
+                                <a href="" class="detail-hotel my-1">Xem chi tiết phòng</a>
                                 <div class="my-1"><b>Liên hệ với chúng tôi?</b></div>
                                 <a href="https://www.facebook.com/thaiquymomo"><i class="bi bi-facebook text-primary"></i></a>
                             </div>

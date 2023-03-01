@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        nav ul li a.active {
+            color: red;
+        }
+
+        nav {
+            position: fixed;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 10px;
+        }
+
+        nav ul li a {
+            padding: 10px;
+        }
+
+        main {
+            padding-top: 50px;
+            padding-bottom: 100px;
+        }
+    </style>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#section1">Section 1</a></li>
+                <li><a href="#section2">Section 2</a></li>
+                <li><a href="#section3">Section 3</a></li>
+                <li><a href="#section4">Section 4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="section1">
+            <h2>Section 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia elit eget elit consequat euismod.
+                Sed ac faucibus libero, ut elementum nunc. Integer euismod nisi vitae lobortis eleifend. Fusce sodales
+                libero vel metus hendrerit lacinia. Sed maximus rhoncus lorem ut congue. Nulla facilisi. Sed dictum
+                rutrum sapien, a laoreet odio sodales ut. Aliquam ut enim ac mi dignissim bibendum. Praesent in dictum
+                nisl.</p>
+        </section>
+        <section id="section2">
+            <h2>Section 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia elit eget elit consequat euismod.
+                Sed ac faucibus libero, ut elementum nunc. Integer euismod nisi vitae lobortis eleifend. Fusce sodales
+                libero vel metus hendrerit lacinia. Sed maximus rhoncus lorem ut congue. Nulla facilisi. Sed dictum
+                rutrum sapien, a laoreet odio sodales ut. Aliquam ut enim ac mi dignissim bibendum. Praesent in dictum
+                nisl.</p>
+        </section>
+        <section id="section3">
+            <h2>Section 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia elit eget elit consequat euismod.
+                Sed ac faucibus libero, ut elementum nunc. Integer euismod nisi vitae lobortis eleifend. Fusce sodales
+                libero vel metus hendrerit lacinia. Sed maximus rhoncus lorem ut congue. Nulla facilisi. Sed dictum
+                rutrum sapien, a laoreet odio sodales ut. Aliquam ut enim ac mi dignissim bibendum. Praesent in dictum
+                nisl.</p>
+        </section>
+        <section id="section4">
+            <h2>Section 4</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia elit eget elit consequat euismod.
+                Sed ac faucibus libero, ut elementum nunc. Integer euismod nisi vitae lobortis eleifend. Fusce sodales
+                libero vel metus hendrerit lacinia. Sed maximus rhoncus lorem ut congue. Nulla facilisi. Sed dictum
+                rutrum sapien, a laoreet odio sodales ut. Aliquam ut enim ac mi dignissim bibendum. Pra
+        </section>
+        <section id="section5">
+            <h2>Section 5</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia elit eget elit consequat euismod.
+                Sed ac faucibus libero, ut elementum nunc. Integer euismod nisi vitae lobortis eleifend. Fusce sodales
+                libero vel metus hendrerit lacinia. Sed maximus rhoncus lorem ut congue. Nulla facilisi. Sed dictum
+                rutrum sapien, a laoreet odio sodales ut. Aliquam ut enim ac mi dignissim bibendum. Pra
+        </section>
+        <script>
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            window.addEventListener('scroll', () => {
+                let fromTop = window.scrollY;
+                if (fromTop == 700) {
+                    alert('Trần Quý');
+                }
+                console.log(fromTop);
+                navLinks.forEach(link => {
+                    let section = document.querySelector(link.hash);
+                    if (
+                        section.offsetTop <= fromTop &&
+                        section.offsetTop + section.offsetHeight > fromTop
+                    ) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            });
+        </script>
+    </main>
+</body>
+
+</html>

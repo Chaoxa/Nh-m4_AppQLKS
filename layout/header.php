@@ -33,8 +33,9 @@
                                     </li>
                                     <li><a href=""><i class="bi bi-translate"></i>Việt Nam</a></li>
                                     <?php if (is_login()) { ?>
+                                        <li class="icon-coin"><span class="p-1"><?php echo get_field('coin') ?> Coin</span></li>
                                         <div class="user-avatar">
-                                            <img src="https://scontent.fhan18-1.fna.fbcdn.net/v/t39.30808-6/277534722_1332128460589061_1040701051996209631_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=w_rB1GMTLUYAX8aGBhC&_nc_ht=scontent.fhan18-1.fna&oh=00_AfANPiifBv5bq6JGxOG1z2xnSMaLb5e84iHJcUt2Pq1xpQ&oe=63FE45D9" alt="User Avatar">
+                                            <img src="<?php echo get_field('avt') ?>" alt="User Avatar">
                                             <div class="user-menu">
                                                 <a href="?mod=coin&action=recharge">Nạp coin</a>
                                                 <a href="?mod=users&action=logout">Đăng xuất</a>
@@ -106,9 +107,6 @@
                                         <li><a href="">Sản phẩm bổ sung<i class="bi bi-caret-down-fill icon-toggle"></i></a>
                                         </li>
                                     </ul>
-                                </div>
-                                <div id="coin">
-                                    <p class="icon-coin"><span class="p-1"><?php echo get_field('coin') ?> Coin</span></p>
                                 </div>
                             </nav>
                         </div>

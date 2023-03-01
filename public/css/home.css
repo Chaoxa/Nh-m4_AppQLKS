@@ -81,7 +81,7 @@ nav .menu-child ul {
 }
 
 #wp-content {
-  height: 550px;
+  height: 520px;
 }
 #slide-show {
   background-color: rgb(0, 195, 255);
@@ -247,7 +247,16 @@ body {
   border: none;
 }
 
-#coin .icon-coin span {
+.icon-coin span {
   font-weight: 800;
   color: rgb(255, 153, 0);
+}
+
+.price .detail-hotel {
+  color: blueviolet;
+}
+.price .detail-hotel:hover {
+  color: rgb(226, 43, 43);
+  transition: all 0.5s;
+  text-decoration: none;
 }

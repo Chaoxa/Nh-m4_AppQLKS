@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 26, 2023 lúc 07:40 PM
+-- Thời gian đã tạo: Th3 01, 2023 lúc 06:41 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -46,7 +46,7 @@ CREATE TABLE `guest` (
 
 INSERT INTO `guest` (`username`, `password`, `users_id`, `fullname`, `email`, `tel`, `avt`, `date_reg`, `address`, `coin`) VALUES
 ('Chaoxa2003', '01e6cd1b208fb838b066b8d478f7fec2', 113, 'Trần Quang Quý', NULL, NULL, 'public/uploads/avt_zalo.jpg', '25/02/2023 | 10:17', NULL, 6902),
-('Quycute2003', '01e6cd1b208fb838b066b8d478f7fec2', 114, 'Trần Quang Quý', NULL, NULL, 'https://c2.staticflickr.com/8/7628/27739307291_c43b62d5df_b.jpg', '25/02/2023 | 10:20', NULL, 0);
+('Quycute2003', '01e6cd1b208fb838b066b8d478f7fec2', 114, 'Trần Quang Quý', NULL, NULL, 'admin/public/uploads/avtfb.jpg', '25/02/2023 | 10:20', NULL, 1500);
 
 -- --------------------------------------------------------
 
@@ -94,9 +94,12 @@ CREATE TABLE `tbl_order_coin` (
 --
 
 INSERT INTO `tbl_order_coin` (`id`, `guest_parent`, `amount_coin`, `status`, `time`, `code`) VALUES
-(21, 114, '1500', '0', '27/02/2023 | 00:32', 'nhom-4_003'),
+(21, 114, '1500', '1', '27/02/2023 | 00:32', 'nhom-4_003'),
 (23, 113, '3451', '1', '27/02/2023 | 00:35', 'nhom-4_003'),
-(24, 113, '3000', '0', '27/02/2023 | 01:36', 'nhom-4_013');
+(24, 113, '3000', '0', '27/02/2023 | 01:36', 'nhom-4_013'),
+(25, 113, '1000', '0', '28/02/2023 | 22:51', 'nhom-4_225'),
+(26, 113, '3000', '0', '01/03/2023 | 10:42', 'nhom-4_104'),
+(27, 113, '1001', '0', '01/03/2023 | 10:43', 'nhom-4_104');
 
 -- --------------------------------------------------------
 
@@ -207,7 +210,7 @@ ALTER TABLE `tbl_hotel`
 -- AUTO_INCREMENT cho bảng `tbl_order_coin`
 --
 ALTER TABLE `tbl_order_coin`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_room`
