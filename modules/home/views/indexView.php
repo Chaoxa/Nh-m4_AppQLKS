@@ -141,6 +141,27 @@
                         });
                     </script>
                 </div>
+                <div class="address-filter my-2">
+                    <div class="form-group">
+                        <input type="radio" name="filter_address" id="hanoi">
+                        <label for="hanoi">Hà Nội</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" name="filter_address" id="hanoi">
+                        <label for="hanoi">Đà Nẵng</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" name="filter_address" id="hanoi">
+                        <label for="hanoi">Thái Bình</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" name="filter_address" id="hanoi">
+                        <label for="hanoi">Thanh Hóa</label>
+                    </div>
+                </div>
+                <div class="banner">
+                    <img src="https://channel.mediacdn.vn/428462621602512896/2022/11/23/photo-1-166920031490330252919.png" alt="">
+                </div>
 
             </div>
             <div id="card" class="col-md-9">

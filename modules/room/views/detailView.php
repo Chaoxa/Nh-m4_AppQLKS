@@ -85,10 +85,9 @@
         <h3 class="intro py-2">Giới thiệu</h3>
         <p><?php echo $room_info['hotel_detail'] ?></p>
         <div class="order">
-            <a href="" class="btn btn-success mb-4 text-right">Đặt phòng</a>
+            <a href="<?php echo $room_info['url_order'] ?>" class="btn btn-success mb-4 text-right">Đặt phòng</a>
         </div>
     </div>
-
 </div>
 <script>
     var main_image = document.querySelector('.main-1');

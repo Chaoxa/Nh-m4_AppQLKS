@@ -8,10 +8,9 @@ function construct()
 
 function indexAction()
 {
-    $list_order_coin = db_fetch_array('SELECT *
-    FROM tbl_order_coin
-    JOIN guest
-    ON tbl_order_coin.guest_parent = guest.users_id;
+    $list_order_coin = db_fetch_array('SELECT * FROM tbl_order_coin 
+    JOIN guest ON tbl_order_coin.guest_parent = guest.users_id 
+    ORDER BY tbl_order_coin.id DESC;    
     ');
     $data['list_order_coin'] = $list_order_coin;
     load_view('index', $data);
