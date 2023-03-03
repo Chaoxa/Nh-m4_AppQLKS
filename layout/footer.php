@@ -30,11 +30,6 @@
                     <b>Trần Quang Quý</b>
                 </a></div>
             <div>
-                <div>
-                    <a href="" class="text-white">
-                        <b>Nguyễn Hoàng Anh</b>
-                    </a>
-                </div>
                 <a href="" class="text-white">
                     <b>Phạm Tiến Đạt</b>
                 </a>
@@ -50,6 +45,12 @@
                     <b>Hoàng Minh Ngọc</b>
                 </a>
             </div>
+            <div>
+                <a href="" class="text-white">
+                    <b>Nguyễn Hoàng Anh</b>
+                </a>
+            </div>
+
         </div>
         <div class="col-md-3">
             <h5 class="text-white">Bộ công nông xác nhận</h5>

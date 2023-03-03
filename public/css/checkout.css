@@ -1,0 +1,25 @@
+#checkout .thumb-main img {
+  max-width: 200px;
+  border-radius: 10px;
+}
+#checkout .room-hotel {
+  margin: 30px 0px;
+  background: grey;
+  border-radius: 10px;
+}
+
+#checkout .more-info {
+  padding: 0px 20px;
+}
+#checkout .more-info .price {
+  padding: 0px 20px;
+}
+#checkout .more-info .price .money b {
+  color: rgb(25, 0, 255);
+}
+#checkout .more-info .price .coin {
+  color: rgb(251, 255, 0);
+}
+#checkout .btn-order {
+  text-align: right;
+}

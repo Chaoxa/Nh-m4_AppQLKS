@@ -62,12 +62,9 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="address">Thành phố,địa điểm du lịch</label>
-                                                    <select id="address" class="form-control">
-                                                        <option value="0">---Chọn---</option>
-                                                        <option value="0">Hà Nội</option>
-                                                        <option value="0">Đà Nẵng</option>
-                                                        <option value="0">TP.Hồ Chí Minh</option>
+                                                    <label for="address" class="pt-3">Thành phố,địa điểm du lịch</label>
+                                                    <select class="form-select form-select-sm mb-3 form-control" id="city" aria-label=".form-select-sm">
+                                                        <option value="" selected>Chọn tỉnh thành</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -76,26 +73,63 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="district">Quận/Huyện</label>
-                                                    <select name="num-order" id="district" class="form-control">
-                                                        <option value="">--Chọn--</option>
-                                                        <option value="1">Hà Nội</option>
-                                                        <option value="2">Đà Nẵng</option>
-                                                        <option value="3">Thanh Hóa</option>
+                                                    <select class="form-select form-select-sm mb-3 form-control" id="district" aria-label=".form-select-sm">
+                                                        <option value="" selected>Chọn quận huyện</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="num-order">Phường Xã</label>
-                                                    <select name="num-order" id="num-order" class="form-control">
-                                                        <option value="">--Chọn--</option>
-                                                        <option value="1">Sơn Đồng</option>
-                                                        <option value="2">Yên Sở</option>
-                                                        <option value="3">Đức Giang</option>
+                                                    <select class="form-select form-select-sm form-control" id="ward" aria-label=".form-select-sm">
+                                                        <option value="" selected>Chọn phường xã</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+                                        <script>
+                                            var citis = document.getElementById("city");
+                                            var districts = document.getElementById("district");
+                                            var wards = document.getElementById("ward");
+                                            var Parameter = {
+                                                url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json",
+                                                method: "GET",
+                                                responseType: "application/json",
+                                            };
+                                            var promise = axios(Parameter);
+                                            promise.then(function(result) {
+                                                renderCity(result.data);
+                                            });
+
+                                            function renderCity(data) {
+                                                for (const x of data) {
+                                                    citis.options[citis.options.length] = new Option(x.Name, x.Id);
+                                                }
+                                                citis.onchange = function() {
+                                                    district.length = 1;
+                                                    ward.length = 1;
+                                                    if (this.value != "") {
+                                                        const result = data.filter(n => n.Id === this.value);
+
+                                                        for (const k of result[0].Districts) {
+                                                            district.options[district.options.length] = new Option(k.Name, k.Id);
+                                                        }
+                                                    }
+                                                };
+                                                district.onchange = function() {
+                                                    ward.length = 1;
+                                                    const dataCity = data.filter((n) => n.Id === citis.value);
+                                                    if (this.value != "") {
+                                                        const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
+
+                                                        for (const w of dataWards) {
+                                                            wards.options[wards.options.length] = new Option(w.Name, w.Id);
+                                                        }
+                                                    }
+                                                };
+                                            }
+                                        </script>
                                     </form>
                                 </div>
                             </div>
@@ -210,7 +244,7 @@
     $(document).ready(function() {
         $(".owl-carousel").owlCarousel({
             autoplay: true,
-            autoplayTimeout: 5000,
+            autoplayTimeout: 4000,
             loop: true,
             margin: 10,
             nav: true,
