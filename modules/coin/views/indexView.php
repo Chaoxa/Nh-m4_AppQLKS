@@ -21,6 +21,7 @@
         padding: 20px 10px;
         max-width: 500px;
         margin: 0px auto;
+        padding-top: 60px;
     }
 
     #price_list {
