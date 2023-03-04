@@ -7,17 +7,17 @@
                     <div class="form-order py-3">
                         <div class="form-group">
                             <label for="fullname">Họ và tên:</label>
-                            <input type="text" name="fullname" placeholder="Nguyễn Văn A" class="form-control" id="fullname">
+                            <input type="text" name="fullname" placeholder="Nguyễn Văn A" class="form-control" id="fullname" value="<?php echo set_value('fullname') ?>">
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group">
                             <label for="tel">Số điện thoại:</label>
-                            <input type="text" name="tel" placeholder="Số điện thoại" class="form-control" id="tel">
+                            <input type="text" name="tel" placeholder="Số điện thoại" class="form-control" id="tel" value="<?php echo set_value('tel') ?>">
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" name="email" placeholder="nhom4abc@gmail.com" class="form-control" id="email">
+                            <input type="email" name="email" placeholder="nhom4abc@gmail.com" class="form-control" id="email" value="<?php echo set_value('email') ?>">
                             <span class="form-message"></span>
                         </div>
                     </div>
@@ -53,11 +53,11 @@
                     <div class="payments">
                         <h3>Hình thức thanh toán</h3>
                         <div class="form-group p-0">
-                            <input type="radio" name="direct_payment" id="direct_payment" checked value="0">
+                            <input type="radio" name="direct_payment" id="direct_payment" value="0">
                             <label for="direct_payment">Thanh toán trực tiếp</label>
                         </div>
                         <div class="form-group p-0">
-                            <input type="radio" name="direct_payment" id="payment_coin" value="1">
+                            <input type="radio" name="direct_payment" id="payment_coin" checked value="1">
                             <label for="payment_coin">Thanh toán bằng coin</label>
                         </div>
                     </div>
