@@ -75,6 +75,7 @@
 
             <ul class="sub-menu">
                 <li><a href="?view=add-user">Thêm nhân viên</a></li>
+                <li><a href="?view=add-user">Danh sách nhân viên</a></li>
                 <li><a href="?view=add-user">Chấm công ngày</a></li>
                 <li><a href="?view=list-user">Tính lương nhân viên</a></li>
             </ul>
