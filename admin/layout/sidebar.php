@@ -28,12 +28,12 @@
                 <div class="nav-link-icon d-inline-flex">
                     <i class="far fa-folder"></i>
                 </div>
-                Khách sạn
+                <a href="?mod=hotel&action=index">Khách sạn</a>
             </a>
             <i class="arrow fas fa-angle-right"></i>
             <ul class="sub-menu">
                 <li><a href="?mod=hotel&action=add">Thêm khách sạn</a></li>
-                <li><a href="?view=list-post">Danh sách khách sạn</a></li>
+                <li><a href="?mod=hotel&action=index">Danh sách khách sạn</a></li>
             </ul>
         </li>
         <li class="nav-link">
@@ -41,13 +41,13 @@
                 <div class="nav-link-icon d-inline-flex">
                     <i class="far fa-folder"></i>
                 </div>
-                Phòng
+                <a href="?mod=room&action=index">Phòng</a>
             </a>
             <i class="arrow fas fa-angle-right"></i>
 
             <ul class="sub-menu">
                 <li><a href="?mod=room&action=add">Thêm phòng</a></li>
-                <li><a href="?view=list-product">Danh sách phòng</a></li>
+                <li><a href="?mod=room&action=index">Danh sách phòng</a></li>
             </ul>
         </li>
         <li class="nav-link">
@@ -81,5 +81,31 @@
             </ul>
         </li>
     </ul>
+    <script>
+        var menuItems = document.querySelectorAll('.nav-link');
+        menuItems.forEach(function(item) {
+            document.addEventListener('DOMContentLoaded', function() {
+                var activeMenuItem = localStorage.getItem('activeMenuItem');
+                if (activeMenuItem) {
+                    var menuItem = document.querySelector(`.nav-link:contains('${activeMenuItem}')`);
+                    menuItem.classList.add('active');
+                }
+            });
+            item.addEventListener('click', function() {
+                // Remove the "active" class from all menu items
+                menuItems.forEach(function(item) {
+                    item.classList.remove('active');
+
+                });
+                // Add the "active" class to the clicked menu item
+                item.classList.add('active');
+                // $(".nav-link.active .sub-menu").slideDown();
+
+                // Save the active menu item to localStorage
+                localStorage.setItem('activeMenuItem', item.textContent);
+            });
+
+        });
+    </script>
 </div>
 <div id="wp-content">

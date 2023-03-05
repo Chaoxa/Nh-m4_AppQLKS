@@ -32,6 +32,7 @@ function user_login()
 function info_user($field = 'id')
 {
     global $list_user;
+    $list_user = db_fetch_array("SELECT * FROM `guest` WHERE 1");
     if (isset($_SESSION['is_login'])) {
         foreach ($list_user as $user) {
             if ($_SESSION['user_login'] == $user['username']) {

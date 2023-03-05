@@ -34,7 +34,7 @@
                                     <?php if (is_login()) { ?>
                                         <li class="icon-coin"><span class="p-1"><?php echo get_field('coin') ?> Coin</span></li>
                                         <div class="user-avatar">
-                                            <img src="admin/<?php echo get_field('avt') ?>" alt="User Avatar">
+                                            <img src="<?php echo get_field('avt') ?>" alt="User Avatar">
                                             <div class="user-menu">
                                                 <a href="?mod=coin&action=recharge">Nạp coin</a>
                                                 <a href="?mod=users&action=logout">Đăng xuất</a>

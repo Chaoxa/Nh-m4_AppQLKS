@@ -23,9 +23,9 @@
 
         <div class="col">
             <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-                <div class="card-header">DOANH SỐ</div>
+                <div class="card-header">DOANH THU</div>
                 <div class="card-body">
-                    <h5 class="card-title">2.5 tỷ</h5>
+                    <h5 class="card-title">250.000.000 VNĐ</h5>
                     <p class="card-text">Doanh số hệ thống</p>
                 </div>
             </div>

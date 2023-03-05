@@ -86,9 +86,9 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+                                            <script src="public/js/auto_address.js"></script>
                                         </div>
-                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-                                        <script src="public/js/auto_address.js"></script>
                                     </form>
                                 </div>
                             </div>
@@ -185,7 +185,11 @@
                                 </div>
                                 <div class="old-price my-1"><del><?php echo price($hotel['old_price'], 'VNĐ') ?></del></div>
                                 <div class="new-price my-1"><b class="text-danger"><?php echo price($hotel['new_price'], 'VNĐ') ?></b></div>
-                                <a href="?mod=room&action=room_detail&id=<?php echo $hotel['room_id'] ?>" class="detail-hotel my-1"><b>Xem chi tiết</b> <i class="bi bi-three-dots"></i></a>
+                                <?php if ($hotel['number_rooms'] > 0) { ?>
+                                    <a href="?mod=room&action=room_detail&id=<?php echo $hotel['room_id'] ?>" class="detail-hotel my-1"><b>Xem chi tiết</b> <i class="bi bi-three-dots"></i></a>
+                                <?php } else { ?>
+                                    <span class="bg-danger img-rounded text-white px-1 amount_room">Đã hết phòng</span>
+                                <?php } ?>
                                 <div class="my-1"><b>Liên hệ với chúng tôi?</b></div>
                                 <a href="https://www.facebook.com/thaiquymomo"><i class="bi bi-facebook text-primary"></i></a>
                             </div>

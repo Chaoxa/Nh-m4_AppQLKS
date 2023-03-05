@@ -6,6 +6,13 @@ function construct()
     load_model('index');
 }
 
+function indexAction()
+{
+    $list_hotels = db_fetch_array('SELECT * FROM `tbl_hotel` WHERE 1');
+    $data['list_hotels'] = $list_hotels;
+    load_view('index', $data);
+}
+
 function addAction()
 {
     global $error, $name_hotel, $time, $creator, $notify, $address;

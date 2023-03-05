@@ -47,7 +47,7 @@ function logoutAction()
 function regAction()
 {
     // show_array($_POST);
-    $avt = 'https://c2.staticflickr.com/8/7628/27739307291_c43b62d5df_b.jpg';
+    $avt = 'https://anhdep123.com/wp-content/uploads/2020/05/nhung-hinh-anh-dai-dien-dep-nhat-2.jpg';
 
     global $error, $fullname, $username, $notify;
     if (isset($_POST['btn-reg'])) {
@@ -73,6 +73,7 @@ function regAction()
                 'date_reg' => $time,
                 'password' => md5($password),
                 'avt' => $avt,
+                'coin' => 0,
             );
             db_insert('guest', $data);
             $notify = array();

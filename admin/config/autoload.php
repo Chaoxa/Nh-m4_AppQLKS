@@ -33,4 +33,4 @@ $autoload['lib'] = array('validation_form');
  */
 
 
-$autoload['helper'] = array('data', 'url', 'user', 'format');
+$autoload['helper'] = array('data', 'url', 'user', 'format', 'string');

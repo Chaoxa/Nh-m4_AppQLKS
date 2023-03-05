@@ -3,7 +3,7 @@
     <?php get_sidebar() ?>
     <div class="card">
         <div class="card-header font-weight-bold">
-            DANH SÁCH PHÒNG
+            DANH SÁCH KHÁCH SẠN
         </div>
         <div class="card-body">
             <table class="table table-striped">
@@ -12,8 +12,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Ảnh</th>
                         <th scope="col">Tên</th>
-                        <th scope="col">Giá phòng</th>
-                        <th scope="col">Số lượng</th>
+                        <th scope="col">Địa chỉ</th>
                         <th scope="col">Trạng thái</th>
                         <th scope="col">Người tạo</th>
                         <th scope="col">Thời gian</th>
@@ -22,21 +21,20 @@
                 </thead>
                 <tbody>
                     <?php $count = 0;
-                    foreach ($list_rooms as $room) {
+                    foreach ($list_hotels as $hotel) {
                         $count++; ?>
                         <tr>
                             <th scope="row"><?php echo $count ?></th>
-                            <td><img width="60px" src="<?php echo cut_string('admin/', $room['thumb_main_room']) ?>" alt=""></td>
+                            <td><img width="60px" src="<?php echo cut_string('admin/', $hotel['thumb_main']) ?>" alt=""></td>
                             <td>
-                                <?php echo $room['room_name'] ?>
+                                <?php echo $hotel['name'] ?>
                             </td>
-                            <td><?php echo $room['new_price'] ?></td>
-                            <td><?php echo $room['number_rooms'] ?></td>
-                            <td><span class="badge bg-success text-white">Hoạt động</span></td>
-                            <td><?php echo $room['creator'] ?></td>
-                            <td>26:06:2020 14:00</td>
+                            <td><?php echo $hotel['address'] ?></td>
+                            <td><span class="badge bg-success">Hoạt động</span></td>
+                            <td><?php echo $hotel['creator'] ?></td>
+                            <td><?php echo $hotel['time'] ?></td>
                             <td>
-                                <a href="?mod=room&action=update_room&id=<?php echo $room['room_id'] ?>" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                                <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
                                 <a href="#" class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>

@@ -57,7 +57,7 @@
                                 <input type="checkbox">
                             </td>
                             <td><?php echo $temp ?></td>
-                            <td><img src="<?php echo $value['avt'] ?>" alt="error" width="100px"></td>
+                            <td><img src="<?php echo cut_string('admin/', $value['avt']) ?>" alt="error" width="100px"></td>
                             <td><a href="#"><?php echo $value['username'] ?></a></td>
                             <td><?php echo $value['amount_coin'] ?></td>
                             <td><?php echo currency_format($value['amount_coin'] * 1000, 'đ') ?></td>

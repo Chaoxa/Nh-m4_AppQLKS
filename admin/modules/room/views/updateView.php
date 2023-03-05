@@ -23,7 +23,7 @@
     <?php get_sidebar() ?>
     <div class="card">
         <div class="card-header font-weight-bold">
-            Thêm phòng
+            Cập nhật phòng
         </div>
         <div class="card-body">
             <form action="" method="POST" enctype="multipart/form-data" id="form-1">
@@ -32,7 +32,7 @@
                         <div class="col-md-12 p-0">
                             <div class="form-group">
                                 <label for="hotel_name"><b>Tên phòng</b></label>
-                                <input class="form-control" type="text" name="hotel_name" id="hotel_name" value="<?php echo set_value('hotel_name') ?>">
+                                <input class="form-control" type="text" name="hotel_name" id="hotel_name" value="<?php echo $room['room_name'] ?>">
                                 <span class="form-message"></span>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="old_price"><b>Giá phòng</b><span class="text-danger">(*)</span></label>
-                                        <input type="text" name="old_price" placeholder="VNĐ" class="form-control" onkeyup="count()" id="old_price" value="<?php echo set_value('old_price') ?>">
+                                        <input type="text" name="old_price" placeholder="VNĐ" class="form-control" onkeyup="count()" id="old_price" value="<?php echo $room['old_price'] ?>">
                                         <span class="form-message"></span>
 
                                     </div>
@@ -49,13 +49,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="discount"><b>Giảm giá % </b><span class="text-danger">(Không bắt buộc)</span></label>
-                                        <input type="text" placeholder="%" name="discount" onkeyup="count()" class="form-control" id="discount" value="<?php echo set_value('discount') ?>">
+                                        <input type="text" placeholder="%" name="discount" onkeyup="count()" class="form-control" id="discount" value="<?php echo $room['discount'] ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label for="amount_room"><b>Số lượng</b></label>
-                                        <input type="number" name="amount_room" min=0 max=99 id="amount_room" class="form-control">
+                                        <input type="number" name="amount_room" min=0 max=99 id="amount_room" class="form-control" value="<?php echo $room['number_rooms'] ?>">
                                     </div>
                                 </div>
                                 <script>
@@ -79,7 +79,7 @@
                             <div class="col-md-6">
                                 <div id="uploadFile">
                                     <input type="file" name="file_upload" id="file_upload" onchange="chooseFile(this)">
-                                    <img src="public/images/img-thumb.png" alt="" id="image" class="img-rounded my-2" width="150">
+                                    <img src="<?php echo cut_string('admin/', $room['thumb_main_room']) ?>" alt="" id="image" class="img-rounded my-2" width="150">
                                     <?php echo form_error('file_upload') ?>
                                 </div>
                             </div>
@@ -110,35 +110,36 @@
                 </div>
                 <div class="col-md-6 mb-3 p-0">
                     <label for="new_price" class="text-success"><b>Thành tiền: </b><span class="text-danger">(*)</span></label>
-                    <input type="text" id="new_price" name="new_price" class="form-control m-0" value="<?php echo set_value('new_price') ?>">
+                    <input type="text" id="new_price" name="new_price" class="form-control m-0" value="<?php echo $room['new_price'] ?>">
                     <span class="form-message"></span>
 
                 </div>
                 <div class="form-group">
                     <label for="desc"><b>Mô tả phòng</b></label>
-                    <textarea name="desc" class="form-control" id="desc" cols="30" rows="10"><?php echo set_value('desc') ?></textarea>
+                    <textarea name="desc" class="form-control" id="desc" cols="30" rows="10">"<?php echo $room['hotel_desc'] ?>"</textarea>
                     <span class="form-message"></span>
                 </div>
                 <div class="form-group">
                     <label for="detail"><b>Chi tiết phòng</b></label>
-                    <textarea name="detail" class="form-control" id="detail" cols="30" rows="5"><?php echo set_value('detail') ?></textarea>
+                    <textarea name="detail" class="form-control" id="detail" cols="30" rows="5">"<?php echo $room['hotel_detail'] ?>"</textarea>
                     <span class="form-message"></span>
                 </div>
 
 
-                <div class="col-md-3 p-0">
+                <div class="col-md-6 p-0">
                     <div class="form-group">
                         <label for=""><b>Danh mục</b></label>
                         <select class="form-control" id="" name="hotel_cat">
                             <option>---Danh mục khách sạn---</option>
                             <?php foreach ($list_hotel as $hotel) { ?>
-                                <option value="<?php echo $hotel['id'] ?>">
+                                <option value="<?php echo $hotel['id'] ?>" <?php if ($hotel['id'] == $room['parent_hotel']) echo 'selected' ?>>
                                     <?php echo $hotel['name'] ?>
                                 </option>
                             <?php } ?>
                         </select>
                         <?php echo form_error('hotel_cat') ?>
                     </div>
+
                 </div>
                 <div class="form-group">
                     <label for=""><b>Trạng thái</b></label>
@@ -156,7 +157,7 @@
                     </div>
                 </div>
                 <input type="text" name="btn-add" hidden value="Thêm mới">
-                <button type="submit" class="btn btn-primary" name="btn-add">Thêm mới</button>
+                <button type="submit" class="btn btn-primary" name="btn-add">Cập nhật</button>
             </form>
             <strong><?php echo notify('add_success') ?></strong>
         </div>
