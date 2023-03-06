@@ -61,7 +61,7 @@
                             <td><a href="#"><?php echo $value['username'] ?></a></td>
                             <td><?php echo $value['amount_coin'] ?></td>
                             <td><?php echo currency_format($value['amount_coin'] * 1000, 'đ') ?></td>
-                            <td><?php echo $value['status'] ?></td>
+                            <td><?php if ($value['status']) { ?><span class="bg-success text-white">Thành công</span><?php } else { ?><span class="bg-secondary text-white">Chờ xác nhận</span><?php } ?></td>
                             <td><?php echo $value['time'] ?></td>
                             <td>
                                 <a href="?mod=guest&action=recharge&guest=<?php echo $value['users_id'] ?>&id=<?php echo $value['id'] ?>" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Xác nhận nạp"><i class="fa fa-edit"></i></a>

@@ -366,4 +366,11 @@ function update_roomAction()
     $data['list_hotel'] = $list_hotel;
     $data['room'] = $room;
     load_view('update', $data);
-}
+};
+
+function delete_roomAction()
+{
+    $id = $_GET['id'];
+    db_delete('tbl_room', "`room_id` = $id");
+    redirect('?mod=room&action=index');
+};

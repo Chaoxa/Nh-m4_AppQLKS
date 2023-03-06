@@ -275,3 +275,11 @@ body {
 .amount_room {
   border-radius: 5px;
 }
+
+.room_name:hover {
+  text-decoration: none;
+}
+
+.paging {
+  margin: 0px auto;
+}

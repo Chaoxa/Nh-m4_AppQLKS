@@ -36,8 +36,8 @@
                             <td><?php echo $room['creator'] ?></td>
                             <td>26:06:2020 14:00</td>
                             <td>
-                                <a href="?mod=room&action=update_room&id=<?php echo $room['room_id'] ?>" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
-                                <a href="#" class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                                <a href="?mod=room&action=update_room&id=<?php echo $room['room_id'] ?>" class="btn btn-success btn-sm text-white" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
+                                <a href="?mod=room&action=delete_room&id=<?php echo $room['room_id'] ?>" class="btn btn-danger btn-sm text-white" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php } ?>
