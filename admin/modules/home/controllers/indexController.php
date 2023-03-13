@@ -11,10 +11,10 @@ function construct()
 function indexAction()
 {
     $list_order_room = db_fetch_array("SELECT *
-    FROM tbl_order_room
-    INNER JOIN guest ON tbl_order_room.guest_id = guest.users_id
-    INNER JOIN tbl_room ON tbl_order_room.room_id = tbl_room.room_id;
-    ");
+        FROM tbl_order_room
+        INNER JOIN guest ON tbl_order_room.guest_id = guest.users_id
+        INNER JOIN tbl_room ON tbl_order_room.room_id = tbl_room.room_id 
+        GROUP BY tbl_order_room.room_id ASC");
     $data['list_order_room'] = $list_order_room;
     load_view('index', $data);
 }
@@ -32,5 +32,5 @@ function order_successAction()
     );
     db_update('tbl_room', $data_number_rooms, "`room_id` = {$room_id['room_id']}");
     db_update('tbl_order_room', $data, "`order_id` = $order_id");
-    redirect('http://localhost/Nh-m4_AppQLKS/admin/?');
+    redirect(base_url('?'));
 }

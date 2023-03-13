@@ -11,7 +11,7 @@
  * 
  */
 
-$config['base_url'] = "http://localhost/Nh%c3%b3m-4_AppQLKS/";
+$config['base_url'] = "http://localhost/Nhom-4_AppQLKS/";
 
 
 $config['default_module'] = 'home';

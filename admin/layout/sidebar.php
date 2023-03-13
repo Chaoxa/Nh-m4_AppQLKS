@@ -1,27 +1,13 @@
 <div id="sidebar" class="bg-white">
     <ul id="sidebar-menu">
         <li class="nav-link">
-            <a href="?view=dashboard">
+            <a href="?">
                 <div class="nav-link-icon d-inline-flex">
                     <i class="far fa-folder"></i>
                 </div>
                 Dashboard
             </a>
             <i class="arrow fas fa-angle-right"></i>
-        </li>
-        <li class="nav-link">
-            <a href="?view=list-post">
-                <div class="nav-link-icon d-inline-flex">
-                    <i class="far fa-folder"></i>
-                </div>
-                Trang
-            </a>
-            <i class="arrow fas fa-angle-right"></i>
-
-            <ul class="sub-menu">
-                <li><a href="?view=add-post">Thêm mới</a></li>
-                <li><a href="?view=list-post">Danh sách</a></li>
-            </ul>
         </li>
         <li class="nav-link">
             <a href="?view=list-post">
@@ -59,9 +45,8 @@
             </a>
             <i class="arrow fas fa-angle-right"></i>
             <ul class="sub-menu">
-                <li><a href="?view=list-order">Thông tin khách hàng</a></li>
-                <li><a href="?view=list-order">Danh sách tài khoản </a></li>
-                <li><a href="?mod=guest&action=index">Nạp tiền tài khoản</a></li>
+                <li><a href="?mod=guest&action=index">Đơn nạp coin</a></li>
+                <li><a href="?view=list-order">Danh sách khách hàng</a></li>
             </ul>
         </li>
         <li class="nav-link">

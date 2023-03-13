@@ -63,6 +63,7 @@
                 </thead>
                 <tbody>
                     <?php $count = 0;
+                    // show_array($list_order_room);
                     foreach ($list_order_room as $order) {
                         $count++ ?>
                         <tr>
