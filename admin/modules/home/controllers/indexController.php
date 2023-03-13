@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Arr;
+
 function construct()
 {
     //    echo "DÙng chung, load đầu tiên";
@@ -15,4 +17,20 @@ function indexAction()
     ");
     $data['list_order_room'] = $list_order_room;
     load_view('index', $data);
+}
+
+function order_successAction()
+{
+    $order_id = $_GET['order_id'];
+    $data = array(
+        'room_status' => 1
+    );
+    $room_id = db_fetch_row("SELECT `room_id` FROM `tbl_order_room` WHERE `order_id`=$order_id");
+    $number_rooms = db_fetch_row("SELECT `number_rooms` FROM `tbl_room` WHERE `room_id` = {$room_id['room_id']}");
+    $data_number_rooms = array(
+        'number_rooms' => $number_rooms['number_rooms'] + 1
+    );
+    db_update('tbl_room', $data_number_rooms, "`room_id` = {$room_id['room_id']}");
+    db_update('tbl_order_room', $data, "`order_id` = $order_id");
+    redirect('http://localhost/Nh-m4_AppQLKS/admin/?');
 }

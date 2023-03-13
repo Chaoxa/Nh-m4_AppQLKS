@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 05, 2023 lúc 06:34 PM
+-- Thời gian đã tạo: Th3 13, 2023 lúc 04:46 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -44,8 +44,8 @@ CREATE TABLE `guest` (
 --
 
 INSERT INTO `guest` (`username`, `password`, `users_id`, `fullname`, `email`, `tel`, `avt`, `date_reg`, `coin`) VALUES
-('Chaoxa2003', '01e6cd1b208fb838b066b8d478f7fec2', 113, 'Trần Quang Quý', 'tranquy52003@gmail.com', '0375284572', 'admin/public/uploads/avt_zalo.jpg', '25/02/2023 | 10:17', 247),
-('Quycute2003', '01e6cd1b208fb838b066b8d478f7fec2', 114, 'Trần Quang Quý', 'tranquy52003@gmail.com', '0375284572', 'admin/public/uploads/avtfb.jpg', '25/02/2023 | 10:20', 70),
+('Chaoxa2003', '01e6cd1b208fb838b066b8d478f7fec2', 113, 'Trần Quang Quý', 'tranquy52003@gmail.com', '0375284572', 'admin/public/uploads/avt_zalo.jpg', '25/02/2023 | 10:17', 1726),
+('Quycute2003', '01e6cd1b208fb838b066b8d478f7fec2', 114, 'Trần Dần', 'tranquy52003@gmail.com', '0375284572', 'admin/public/uploads/avtfb.jpg', '25/02/2023 | 10:20', 2570),
 ('Thaymalz', '01e6cd1b208fb838b066b8d478f7fec2', 115, 'Trần Quang Quý', NULL, NULL, 'https://anhdep123.com/wp-content/uploads/2020/05/nhung-hinh-anh-dai-dien-dep-nhat-2.jpg', '05/03/2023 | 20:25', NULL);
 
 -- --------------------------------------------------------
@@ -101,7 +101,7 @@ INSERT INTO `tbl_order_coin` (`id`, `guest_parent`, `amount_coin`, `status`, `ti
 (34, 113, '2000', '1', '04/03/2023 | 15:46', 'nhom-4_154'),
 (35, 114, '1000', '1', '04/03/2023 | 19:03', 'nhom-4_190'),
 (36, 114, '1120', '1', '04/03/2023 | 19:10', 'nhom-4_191'),
-(37, 114, '3000', '0', '05/03/2023 | 23:46', 'nhom-4_234');
+(37, 114, '3000', '1', '05/03/2023 | 23:46', 'nhom-4_234');
 
 -- --------------------------------------------------------
 
@@ -123,23 +123,11 @@ CREATE TABLE `tbl_order_room` (
 --
 
 INSERT INTO `tbl_order_room` (`order_id`, `guest_id`, `room_status`, `time`, `room_id`, `payment_methods`) VALUES
-(67, 114, '0', '04/03/2023 | 19:33', 33, '0'),
-(68, 114, '0', '04/03/2023 | 19:35', 33, '0'),
-(69, 114, '0', '04/03/2023 | 22:52', 9, '1'),
-(70, 114, '0', '05/03/2023 | 23:03', 34, '1'),
-(71, 114, '0', '05/03/2023 | 23:08', 34, '1'),
-(72, 114, '0', '05/03/2023 | 23:10', 34, '1'),
-(73, 114, '0', '05/03/2023 | 23:10', 34, '1'),
-(74, 114, '0', '05/03/2023 | 23:10', 34, '1'),
-(75, 114, '0', '05/03/2023 | 23:10', 34, '1'),
-(76, 114, '0', '05/03/2023 | 23:11', 34, '1'),
-(77, 114, '0', '05/03/2023 | 23:11', 34, '1'),
-(78, 114, '0', '05/03/2023 | 23:11', 34, '1'),
-(79, 114, '0', '05/03/2023 | 23:11', 34, '1'),
-(80, 114, '0', '05/03/2023 | 23:12', 34, '1'),
-(81, 114, '0', '05/03/2023 | 23:12', 34, '1'),
-(82, 114, '0', '05/03/2023 | 23:17', 34, '1'),
-(83, 114, '0', '05/03/2023 | 23:17', 34, '1');
+(84, 113, '1', '13/03/2023 | 08:18', 9, '1'),
+(85, 113, '1', '13/03/2023 | 08:20', 8, '0'),
+(86, 114, '1', '13/03/2023 | 08:22', 33, '1'),
+(87, 114, '0', '13/03/2023 | 08:33', 24, '1'),
+(88, 114, '0', '13/03/2023 | 08:34', 9, '0');
 
 -- --------------------------------------------------------
 
@@ -168,12 +156,11 @@ CREATE TABLE `tbl_room` (
 --
 
 INSERT INTO `tbl_room` (`room_id`, `room_name`, `thumb_main_room`, `thumb_detail`, `creator`, `time`, `parent_hotel`, `old_price`, `discount`, `new_price`, `hotel_desc`, `hotel_detail`, `number_rooms`) VALUES
-(7, 'Phòng TQ 1', 'admin/public/uploads/thumb_main_room1.jpg', '[\"admin\\/public\\/uploads\\/thumb_main_room1.jpg\",\"admin\\/public\\/uploads\\/thumb_room1_detail1.jpg\"]', 'Quycute2003', '24/02/2023 | 01:47', 12, '515000', '32', '350200', 'Phòng đẹp', 'Phòng có 5 giường ngủ', '0'),
-(8, 'Phòng TQ 2', 'admin/public/uploads/thumb_main_room2.jpg', '[\"admin\\/public\\/uploads\\/thumb_room2_detail3.jpg\",\"admin\\/public\\/uploads\\/thumb_main_room2.jpg\",\"admin\\/public\\/uploads\\/thumb_room2_detail1.jpg\"]', 'Quycute2003', '24/02/2023 | 01:52', 12, '899000', '42', '521420', 'Phòng đẹp', 'Phòng có 5 giường ngủ', '0'),
-(9, 'Phòng PĐ 1', 'admin/public/uploads/thumb_room3_detail1.jpg', '[\"admin\\/public\\/uploads\\/thumb_room2_detail2.jpg\",\"admin\\/public\\/uploads\\/thumb_room2_detail3.jpg\",\"admin\\/public\\/uploads\\/thumb_room3_detail1.jpg\"]', 'Quycute2003', '24/02/2023 | 02:31', 13, '1000000', '50', '500000', 'Phòng đẹp', 'Phòng có 5 giường ngủ', '0'),
-(24, 'Room PĐ 1', 'admin/public/uploads/hotel-2.jpg', '[\"admin\\/public\\/uploads\\/hotel-5.jpg\",\"admin/public/uploads/hotel-2.jpg\"]', '', '24/02/2023 | 09:49', 10, '1000000', '50', '500000', 'Phòng đẹp', 'Phòng có 5 giường ngủ', '0'),
-(33, 'Khách sạn vip nhất hà nội', 'admin/public/uploads/thumb_main_room3.jpg', '[\"admin\\/public\\/uploads\\/hotel-5.jpg\",\"admin/public/uploads/hotel-2.jpg\"]', 'Quycute2003', '06/03/2023 | 00:23', 11, '515000', '32', '350200', '\"\"sdfsd\"\"', '\"\"sdfsd\"\"', '24'),
-(34, 'hihi', 'admin/public/uploads/Screenshot_20221026_121649.png', '[\"admin\\/public\\/uploads\\/Screenshot_20221026_121649.png\",\"admin\\/public\\/uploads\\/Screenshot_20221026_123553.png\",\"admin\\/public\\/uploads\\/Screenshot_20221026_123406.png\",\"admin\\/public\\/uploads\\/Screenshot_20221026_122140.png\"]', 'Quycute2003', '05/03/2023 | 22:43', 11, '1231255', '60', '492502', 'sdfsdf', 'sdfsd', '10');
+(7, 'Phòng TQ 1', 'admin/public/uploads/thumb_main_room1.jpg', '[\"admin\\/public\\/uploads\\/thumb_main_room1.jpg\",\"admin\\/public\\/uploads\\/thumb_room1_detail1.jpg\"]', 'Quycute2003', '24/02/2023 | 01:47', 12, '515000', '32', '350200', 'Phòng đẹp', 'Phòng có 5 giường ngủ', '15'),
+(8, 'Phòng TQ 2', 'admin/public/uploads/thumb_main_room2.jpg', '[\"admin\\/public\\/uploads\\/thumb_room2_detail3.jpg\",\"admin\\/public\\/uploads\\/thumb_main_room2.jpg\",\"admin\\/public\\/uploads\\/thumb_room2_detail1.jpg\"]', 'Quycute2003', '24/02/2023 | 01:52', 12, '899000', '42', '521420', 'Phòng đẹp', 'Phòng có 5 giường ngủ', '2'),
+(9, 'Phòng PĐ 1', 'admin/public/uploads/thumb_room3_detail1.jpg', '[\"admin\\/public\\/uploads\\/thumb_room2_detail2.jpg\",\"admin\\/public\\/uploads\\/thumb_room2_detail3.jpg\",\"admin\\/public\\/uploads\\/thumb_room3_detail1.jpg\"]', 'Quycute2003', '24/02/2023 | 02:31', 13, '1000000', '50', '500000', 'Phòng đẹp', 'Phòng có 5 giường ngủ', '75'),
+(24, 'Room PĐ 1', 'admin/public/uploads/hotel-2.jpg', '[\"admin\\/public\\/uploads\\/hotel-5.jpg\",\"admin/public/uploads/hotel-2.jpg\"]', '', '24/02/2023 | 09:49', 10, '1000000', '50', '500000', 'Phòng đẹp', 'Phòng có 5 giường ngủ', '99'),
+(33, 'Phòng Park Home Master', 'admin/public/uploads/thumb_main_room3.jpg', '[\"admin\\/public\\/uploads\\/hotel-5.jpg\",\"admin/public/uploads/hotel-2.jpg\"]', 'Chaoxa2003', '13/03/2023 | 08:09', 11, '515000', '32', '350200', '\"\"\"\"sdfsd\"\"\"\"', '\"\"\"\"sdfsd\"\"\"\"', '24');
 
 -- --------------------------------------------------------
 
@@ -264,7 +251,7 @@ ALTER TABLE `tbl_order_coin`
 -- AUTO_INCREMENT cho bảng `tbl_order_room`
 --
 ALTER TABLE `tbl_order_room`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_room`

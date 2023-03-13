@@ -78,7 +78,7 @@ function checkoutAction()
                 'guest_id' => $id_guest,
                 'room_id' => $id,
                 'time' => $time,
-                'payment_methods' => 1,
+                'payment_methods' => $_POST['direct_payment'],
             );
             db_insert('tbl_order_room', $data_room_order);
 

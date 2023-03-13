@@ -151,56 +151,35 @@ $list_users = get_rooms($start, $num_per_page);
                     </script>
                 </div>
                 <div class="address-filter my-2">
-                    <div class="form-group">
-                        <input type="radio" name="filter_address" id="hanoi" value="Hà Nội">
-                        <label for="hanoi">Hà Nội</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="radio" name="filter_address" id="danang" value="Đà Nẵng">
-                        <label for="danang">Đà Nẵng</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="radio" name="filter_address" id="thaibinh" value="Thái Bình">
-                        <label for="thaibinh">Thái Bình</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="radio" name="filter_address" id="thanhhoa" value="Thanh Hóa">
-                        <label for="thanhhoa">Thanh Hóa</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="radio" name="filter_address" id="HCM" value="TP.Hồ Chí Minh">
-                        <label for="HCM">TP.Hồ Chí Minh</label>
-                    </div>
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <input type="radio" name="filter_address" id="hanoi" value="Hà Nội">
+                            <label for="hanoi">Hà Nội</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="radio" name="filter_address" id="danang" value="Đà Nẵng">
+                            <label for="danang">Đà Nẵng</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="radio" name="filter_address" id="thaibinh" value="Thái Bình">
+                            <label for="thaibinh">Thái Bình</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="radio" name="filter_address" id="thanhhoa" value="Thanh Hóa">
+                            <label for="thanhhoa">Thanh Hóa</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="radio" name="filter_address" id="HCM" value="TP.Hồ Chí Minh">
+                            <label for="HCM">TP.Hồ Chí Minh</label>
+                        </div>
+                        <input type="submit" name="btn-address-filter" value="Lọc" class="btn btn-success">
+                        <a href="?" class="btn btn-primary">Khôi phục</a>
+                    </form>
                 </div>
-                <!-- <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-                <script>
-                    $(document).ready(function() {
-                        // $("#progress").change(function() {
-                        $(document).on('change', '.address-filter', function() {
-                            // alert('oke');
-                            var address = $('input[name="filter_address"]:checked').val();
-
-                            var data = {
-                                address: address,
-                            };
-                            // console.log(data);
-
-                            $.ajax({
-                                url: '?mod=home&action=address_filter',
-                                method: 'POST',
-                                data: data,
-                                dataType: 'json',
-                                success: function(result) {
-                                 
-                                },
-                                error: function(xhr, ajaxOptions, thrownError) {
-                                    alert(xhr.status);
-                                    alert(thrownError);
-                                }
-                            });
-                        });
-                    });
-                </script> -->
+                <?php if (isset($_POST['btn-address-filter']) && !empty($_POST['filter_address'])) {
+                    $address = $_POST['filter_address'];
+                    redirect("?mod=home&action=index&address=$address");
+                } ?>
                 <div class="banner">
                     <img src="https://channel.mediacdn.vn/428462621602512896/2022/11/23/photo-1-166920031490330252919.png" alt="">
                 </div>

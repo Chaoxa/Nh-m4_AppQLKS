@@ -145,3 +145,7 @@ ul#sidebar-menu * {
     right: -5px;
     color: #8c8c8c;
 }
+
+.rounded{
+    border-radius: 10px;
+}

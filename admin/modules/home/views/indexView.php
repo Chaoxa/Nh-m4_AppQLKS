@@ -54,8 +54,9 @@
                         <th scope="col">Ảnh</th>
                         <th scope="col">Tên phòng</th>
                         <th scope="col">Khách hàng</th>
-                        <th scope="col">Tổng tiền</th>
                         <th scope="col">Phương thức</th>
+                        <th scope="col">Tổng tiền</th>
+                        <th scope="col">Trạng thái</th>
                         <th scope="col">Thời gian</th>
                         <th scope="col">Tác vụ</th>
                     </tr>
@@ -67,16 +68,17 @@
                         <tr>
                             <th scope="row"><?php echo $count ?></th>
                             <td><img width="60px" src="<?php echo cut_string('admin/', $order['thumb_main_room']) ?>" alt="error"></td>
-                            <td><?php echo $order['room_name'] ?></td>
+                            <td><?php echo limit_string($order['room_name'], 10) ?></td>
                             <td><a href="#"><?php echo $order['fullname'] ?></a></td>
+                            <td><?php if ($order['payment_methods'] == 0) { ?> <span class="bg-warning text-white rounded">TT trực tiếp</span> <?php } else { ?><span class="bg-success text-white rounded">TT bằng coin</span><?php } ?></td>
                             <td class="text-danger"><b><?php echo currency_format($order['new_price']) ?></b></td>
-                            <td><?php if ($order['payment_methods'] == 0) { ?> <span class="bg-warning text-white">TT trực tiếp</span> <?php } else { ?><span class="bg-success text-white">TT bằng coin</span><?php } ?></td>
+                            <td class="text-success"><b><?php if ($order['room_status'] == 0) { ?> <span class="bg-warning text-white rounded">Đang thuê</span> <?php } else { ?><span class="bg-success text-white rounded">Hoàn thành</span><?php } ?></b></td>
                             <td><?php echo $order['time'] ?></td>
                             <td>
                                 <style>
                                     @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
                                 </style>
-                                <a href="#" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Hoàn thành"><i class="bi bi-check-square-fill"></i></a>
+                                <a href="?mod=home&action=order_success&order_id=<?php echo $order['order_id'] ?>" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Hoàn thành"><i class="bi bi-check-square-fill"></i></a>
                                 <a href="#" class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Xóa"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
@@ -88,7 +90,6 @@
                     <li class="page-item">
                         <a class="page-link" href="#" aria-label="Previous">
                             <span aria-hidden="true">Trước</span>
-                            <span class="sr-only">Sau</span>
                         </a>
                     </li>
                     <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -96,8 +97,7 @@
                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                     <li class="page-item">
                         <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
+                            <span aria-hidden="true">Sau</span>
                         </a>
                     </li>
                 </ul>
