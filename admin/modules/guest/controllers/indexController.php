@@ -6,6 +6,8 @@ function construct()
     load_model('index');
 }
 
+//comment ne
+
 function indexAction()
 {
     $list_guest = db_fetch_array('SELECT * FROM guest WHERE 1');
