@@ -9,7 +9,7 @@
 <div id="content" class="container-fluid">
     <div class="card">
         <div class="card-header font-weight-bold d-flex justify-content-between align-items-center">
-            <h5 class="m-0 ">Danh sách khách hàng</h5>
+            <h5 class="m-0 ">Danh sách nạp coin</h5>
             <div class="form-search form-inline">
                 <form action="#" class="d-flex">
                     <input type="" class="form-control form-search" placeholder="">
@@ -39,27 +39,29 @@
                         </th>
                         <th scope="col">#</th>
                         <th scope="col">Ảnh</th>
-                        <th scope="col">Tên khách hàng</th>
-                        <th scope="col">Số điện thoại</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Coin hiện tại</th>
+                        <th scope="col">Tên tài khoản</th>
+                        <th scope="col">Lượng coin</th>
+                        <th scope="col">Tổng tiền</th>
+                        <th scope="col">Trạng thái</th>
+                        <th scope="col">Thời gian</th>
                         <th scope="col">Tác vụ</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $temp = 0;
-                    foreach ($list_guest as $guest) {
+                    foreach ($list_order_coin as $value) {
                         $temp++ ?>
                         <tr class="">
                             <td>
                                 <input type="checkbox">
                             </td>
                             <td><?php echo $temp ?></td>
-                            <td><img src="<?php echo cut_string('admin/', $guest['avt']) ?>" alt="error" width="100px"></td>
-                            <td><a href="#"><?php echo $guest['fullname'] ?></a></td>
-                            <td><?php echo $guest['tel'] ?></td>
-                            <td><?php echo $guest['email'] ?></td>
-                            <td><?php echo $guest['coin'] ?></td>
+                            <td><img src="<?php echo cut_string('admin/', $value['avt']) ?>" alt="error" width="100px"></td>
+                            <td><a href="#"><?php echo $value['username'] ?></a></td>
+                            <td><?php echo $value['amount_coin'] ?></td>
+                            <td><?php echo currency_format($value['amount_coin'] * 1000, 'đ') ?></td>
+                            <td><?php if ($value['status']) { ?><span class="bg-success text-white rounded">Thành công</span><?php } else { ?><span class="bg-secondary text-white rounded">Chờ xác nhận</span><?php } ?></td>
+                            <td><?php echo $value['time'] ?></td>
                             <td>
                                 <a href="?mod=guest&action=recharge&guest=<?php echo $value['users_id'] ?>&id=<?php echo $value['id'] ?>" class="btn btn-success btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Xác nhận nạp"><i class="fa fa-edit"></i></a>
                                 <a href="?mod=guest&action=delete&id=<?php echo $value['id'] ?>" class="btn btn-danger btn-sm rounded-0 text-white" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>

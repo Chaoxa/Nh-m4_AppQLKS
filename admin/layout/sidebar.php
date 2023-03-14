@@ -7,7 +7,7 @@
                 </div>
                 Dashboard
             </a>
-            <i class="arrow fas fa-angle-right"></i>
+            <i class="arrow fas fa-angle-right py-1"></i>
         </li>
         <li class="nav-link">
             <a href="?view=list-post">
@@ -16,7 +16,7 @@
                 </div>
                 <a href="?mod=hotel&action=index">Khách sạn</a>
             </a>
-            <i class="arrow fas fa-angle-right"></i>
+            <i class="arrow fas fa-angle-right py-1"></i>
             <ul class="sub-menu">
                 <li><a href="?mod=hotel&action=add">Thêm khách sạn</a></li>
                 <li><a href="?mod=hotel&action=index">Danh sách khách sạn</a></li>
@@ -29,7 +29,7 @@
                 </div>
                 <a href="?mod=room&action=index">Phòng</a>
             </a>
-            <i class="arrow fas fa-angle-right"></i>
+            <i class="arrow fas fa-angle-right py-1"></i>
 
             <ul class="sub-menu">
                 <li><a href="?mod=room&action=add">Thêm phòng</a></li>
@@ -41,12 +41,12 @@
                 <div class="nav-link-icon d-inline-flex">
                     <i class="far fa-folder"></i>
                 </div>
-                Khách hàng
+                <a href="?mod=guest&action=index">Khách hàng</a>
             </a>
-            <i class="arrow fas fa-angle-right"></i>
+            <i class="arrow fas fa-angle-right py-1"></i>
             <ul class="sub-menu">
-                <li><a href="?mod=guest&action=index">Đơn nạp coin</a></li>
-                <li><a href="?view=list-order">Danh sách khách hàng</a></li>
+                <li><a href="?mod=guest&action=index">Danh sách khách hàng</a></li>
+                <li><a href="?mod=guest&action=list_order_coin">Đơn nạp Coin</a></li>
             </ul>
         </li>
         <li class="nav-link">
@@ -56,7 +56,7 @@
                 </div>
                 Nhân viên
             </a>
-            <i class="arrow fas fa-angle-right"></i>
+            <i class="arrow fas fa-angle-right py-1"></i>
 
             <ul class="sub-menu">
                 <li><a href="?view=add-user">Thêm nhân viên</a></li>

@@ -8,12 +8,19 @@ function construct()
 
 function indexAction()
 {
+    $list_guest = db_fetch_array('SELECT * FROM guest WHERE 1');
+    $data['list_guest'] = $list_guest;
+    load_view('index', $data);
+}
+
+function list_order_coinAction()
+{
     $list_order_coin = db_fetch_array('SELECT * FROM tbl_order_coin 
     JOIN guest ON tbl_order_coin.guest_parent = guest.users_id 
     ORDER BY tbl_order_coin.id DESC;    
     ');
     $data['list_order_coin'] = $list_order_coin;
-    load_view('index', $data);
+    load_view('list_order_coin', $data);
 }
 
 function rechargeAction()

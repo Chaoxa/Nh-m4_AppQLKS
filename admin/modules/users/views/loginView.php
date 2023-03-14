@@ -15,7 +15,7 @@
             <h1 class="form-heading">Đăng nhập</h1>
             <div class="form-group">
                 <i class="far fa-user icon"></i>
-                <input type="text" class="form-input" placeholder="Tên đăng nhập" name="username" value="">
+                <input type="text" class="form-input" placeholder="Tên đăng nhập" name="username" value="<?php echo set_value('username') ?>">
             </div>
             <div class="form-group">
                 <i class="fas fa-key"></i>

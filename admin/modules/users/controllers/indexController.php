@@ -52,6 +52,4 @@ function logoutAction()
     // setcookie('user_login',$username,time()-3600);
     unset($_SESSION['is_login']);
     unset($_SESSION['user_login']);
-
-    // header("location: ?mod=users&action=login");
 }

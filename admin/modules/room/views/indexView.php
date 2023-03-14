@@ -34,7 +34,7 @@
                             <td><?php echo $room['number_rooms'] ?></td>
                             <td><span class="badge bg-success text-white">Hoạt động</span></td>
                             <td><?php echo $room['creator'] ?></td>
-                            <td>26:06:2020 14:00</td>
+                            <td><?php echo limit_string($room['time'], 10) ?></td>
                             <td>
                                 <a href="?mod=room&action=update_room&id=<?php echo $room['room_id'] ?>" class="btn btn-success btn-sm text-white" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></a>
                                 <a href="?mod=room&action=delete_room&id=<?php echo $room['room_id'] ?>" class="btn btn-danger btn-sm text-white" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>

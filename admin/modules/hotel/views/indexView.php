@@ -27,7 +27,7 @@
                             <th scope="row"><?php echo $count ?></th>
                             <td><img width="60px" src="<?php echo cut_string('admin/', $hotel['thumb_main']) ?>" alt=""></td>
                             <td>
-                                <?php echo $hotel['name'] ?>
+                                <?php echo limit_string($hotel['name'], 20) ?>
                             </td>
                             <td><?php echo $hotel['address'] ?></td>
                             <td><span class="badge bg-success">Hoạt động</span></td>
@@ -46,7 +46,6 @@
                     <li class="page-item">
                         <a class="page-link" href="#" aria-label="Previous">
                             <span aria-hidden="true">Trước</span>
-                            <span class="sr-only">Sau</span>
                         </a>
                     </li>
                     <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -54,8 +53,7 @@
                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                     <li class="page-item">
                         <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                            <span class="sr-only">Next</span>
+                            <span aria-hidden="true">Sau</span>
                         </a>
                     </li>
                 </ul>
