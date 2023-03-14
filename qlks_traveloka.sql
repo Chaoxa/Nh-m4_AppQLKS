@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 13, 2023 lúc 04:46 AM
+-- Thời gian đã tạo: Th3 14, 2023 lúc 07:22 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 7.4.29
 
@@ -44,9 +44,9 @@ CREATE TABLE `guest` (
 --
 
 INSERT INTO `guest` (`username`, `password`, `users_id`, `fullname`, `email`, `tel`, `avt`, `date_reg`, `coin`) VALUES
-('Chaoxa2003', '01e6cd1b208fb838b066b8d478f7fec2', 113, 'Trần Quang Quý', 'tranquy52003@gmail.com', '0375284572', 'admin/public/uploads/avt_zalo.jpg', '25/02/2023 | 10:17', 1726),
-('Quycute2003', '01e6cd1b208fb838b066b8d478f7fec2', 114, 'Trần Dần', 'tranquy52003@gmail.com', '0375284572', 'admin/public/uploads/avtfb.jpg', '25/02/2023 | 10:20', 2570),
-('Thaymalz', '01e6cd1b208fb838b066b8d478f7fec2', 115, 'Trần Quang Quý', NULL, NULL, 'https://anhdep123.com/wp-content/uploads/2020/05/nhung-hinh-anh-dai-dien-dep-nhat-2.jpg', '05/03/2023 | 20:25', NULL);
+('Quycute2003', '01e6cd1b208fb838b066b8d478f7fec2', 113, 'Trần Quang Quý', 'tranquy52003@gmail.com', '0375284572', 'admin/public/uploads/avt_zalo.jpg', '25/02/2023 | 10:17', 1726),
+('Datcute2003', '01e6cd1b208fb838b066b8d478f7fec2', 114, 'Phạm Tiến Đạt', '', '', 'admin/public/uploads/avt_dat.jpg', '25/02/2023 | 10:20', 3670),
+('Hungcute2003', '01e6cd1b208fb838b066b8d478f7fec2', 115, 'Trần Văn Hùng', NULL, NULL, 'admin/public/uploads/avt_hung.jpg', '05/03/2023 | 20:25', NULL);
 
 -- --------------------------------------------------------
 
@@ -94,14 +94,8 @@ CREATE TABLE `tbl_order_coin` (
 --
 
 INSERT INTO `tbl_order_coin` (`id`, `guest_parent`, `amount_coin`, `status`, `time`, `code`) VALUES
-(29, 114, '100000', '1', '02/03/2023 | 03:31', 'nhom-4_033'),
-(31, 113, '1120', '0', '02/03/2023 | 10:34', 'nhom-4_103'),
 (32, 114, '1120', '0', '04/03/2023 | 11:47', 'nhom-4_114'),
-(33, 113, '13056', '0', '04/03/2023 | 14:57', 'nhom-4_145'),
-(34, 113, '2000', '1', '04/03/2023 | 15:46', 'nhom-4_154'),
-(35, 114, '1000', '1', '04/03/2023 | 19:03', 'nhom-4_190'),
-(36, 114, '1120', '1', '04/03/2023 | 19:10', 'nhom-4_191'),
-(37, 114, '3000', '1', '05/03/2023 | 23:46', 'nhom-4_234');
+(34, 113, '2000', '1', '04/03/2023 | 15:46', 'nhom-4_154');
 
 -- --------------------------------------------------------
 
@@ -123,11 +117,9 @@ CREATE TABLE `tbl_order_room` (
 --
 
 INSERT INTO `tbl_order_room` (`order_id`, `guest_id`, `room_status`, `time`, `room_id`, `payment_methods`) VALUES
-(84, 113, '1', '13/03/2023 | 08:18', 9, '1'),
 (85, 113, '1', '13/03/2023 | 08:20', 8, '0'),
 (86, 114, '1', '13/03/2023 | 08:22', 33, '1'),
-(87, 114, '0', '13/03/2023 | 08:33', 24, '1'),
-(88, 114, '0', '13/03/2023 | 08:34', 9, '0');
+(89, 114, '0', '13/03/2023 | 11:03', 8, '0');
 
 -- --------------------------------------------------------
 
@@ -157,10 +149,10 @@ CREATE TABLE `tbl_room` (
 
 INSERT INTO `tbl_room` (`room_id`, `room_name`, `thumb_main_room`, `thumb_detail`, `creator`, `time`, `parent_hotel`, `old_price`, `discount`, `new_price`, `hotel_desc`, `hotel_detail`, `number_rooms`) VALUES
 (7, 'Phòng TQ 1', 'admin/public/uploads/thumb_main_room1.jpg', '[\"admin\\/public\\/uploads\\/thumb_main_room1.jpg\",\"admin\\/public\\/uploads\\/thumb_room1_detail1.jpg\"]', 'Quycute2003', '24/02/2023 | 01:47', 12, '515000', '32', '350200', 'Phòng đẹp', 'Phòng có 5 giường ngủ', '15'),
-(8, 'Phòng TQ 2', 'admin/public/uploads/thumb_main_room2.jpg', '[\"admin\\/public\\/uploads\\/thumb_room2_detail3.jpg\",\"admin\\/public\\/uploads\\/thumb_main_room2.jpg\",\"admin\\/public\\/uploads\\/thumb_room2_detail1.jpg\"]', 'Quycute2003', '24/02/2023 | 01:52', 12, '899000', '42', '521420', 'Phòng đẹp', 'Phòng có 5 giường ngủ', '2'),
-(9, 'Phòng PĐ 1', 'admin/public/uploads/thumb_room3_detail1.jpg', '[\"admin\\/public\\/uploads\\/thumb_room2_detail2.jpg\",\"admin\\/public\\/uploads\\/thumb_room2_detail3.jpg\",\"admin\\/public\\/uploads\\/thumb_room3_detail1.jpg\"]', 'Quycute2003', '24/02/2023 | 02:31', 13, '1000000', '50', '500000', 'Phòng đẹp', 'Phòng có 5 giường ngủ', '75'),
-(24, 'Room PĐ 1', 'admin/public/uploads/hotel-2.jpg', '[\"admin\\/public\\/uploads\\/hotel-5.jpg\",\"admin/public/uploads/hotel-2.jpg\"]', '', '24/02/2023 | 09:49', 10, '1000000', '50', '500000', 'Phòng đẹp', 'Phòng có 5 giường ngủ', '99'),
-(33, 'Phòng Park Home Master', 'admin/public/uploads/thumb_main_room3.jpg', '[\"admin\\/public\\/uploads\\/hotel-5.jpg\",\"admin/public/uploads/hotel-2.jpg\"]', 'Chaoxa2003', '13/03/2023 | 08:09', 11, '515000', '32', '350200', '\"\"\"\"sdfsd\"\"\"\"', '\"\"\"\"sdfsd\"\"\"\"', '24');
+(8, 'Phòng TQ 2', 'admin/public/uploads/thumb_main_room2.jpg', '[\"admin\\/public\\/uploads\\/thumb_room2_detail3.jpg\",\"admin\\/public\\/uploads\\/thumb_main_room2.jpg\",\"admin\\/public\\/uploads\\/thumb_room2_detail1.jpg\"]', 'Quycute2003', '14/03/2023 | 18:45', 12, '899000', '42', '521420', '\"Phòng đẹp\"', '\"Phòng có 5 giường ngủ\"', ''),
+(9, 'Phòng PĐ 1', 'admin/public/uploads/thumb_room3_detail1.jpg', '[\"admin\\/public\\/uploads\\/thumb_room2_detail2.jpg\",\"admin\\/public\\/uploads\\/thumb_room2_detail3.jpg\",\"admin\\/public\\/uploads\\/thumb_room3_detail1.jpg\"]', 'Quycute2003', '24/02/2023 | 02:31', 13, '1000000', '50', '500000', 'Phòng đẹp', 'Phòng có 5 giường ngủ', '80'),
+(24, 'Room PĐ 1', 'admin/public/uploads/hotel-2.jpg', '[\"admin\\/public\\/uploads\\/hotel-5.jpg\",\"admin/public/uploads/hotel-2.jpg\"]', 'Quycute2003', '24/02/2023 | 09:49', 10, '1000000', '50', '500000', 'Phòng đẹp', 'Phòng có 5 giường ngủ', '102'),
+(33, 'Phòng Park Home Master', 'admin/public/uploads/thumb_main_room3.jpg', '[\"admin\\/public\\/uploads\\/hotel-5.jpg\",\"admin/public/uploads/hotel-2.jpg\"]', 'Chaoxa2003', '13/03/2023 | 08:09', 11, '515000', '32', '350200', '\"\"\"\"sdfsd\"\"\"\"', '\"\"\"\"sdfsd\"\"\"\"', '26');
 
 -- --------------------------------------------------------
 
@@ -174,15 +166,24 @@ CREATE TABLE `tbl_users` (
   `username` text NOT NULL,
   `password` text NOT NULL,
   `email` text NOT NULL,
-  `phone` text NOT NULL
+  `phone` text NOT NULL,
+  `avt` varchar(100) DEFAULT NULL,
+  `permission` varchar(100) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  `time` int(20) DEFAULT NULL,
+  `creator` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_users`
 --
 
-INSERT INTO `tbl_users` (`id`, `fullname`, `username`, `password`, `email`, `phone`) VALUES
-(1, 'Trần Quang Quý', 'Quycute2003', '01e6cd1b208fb838b066b8d478f7fec2', 'tranquy52003@gmail.com', '0375284572');
+INSERT INTO `tbl_users` (`id`, `fullname`, `username`, `password`, `email`, `phone`, `avt`, `permission`, `address`, `time`, `creator`) VALUES
+(1, 'Trần Quang Quý', 'Quycute2003', '01e6cd1b208fb838b066b8d478f7fec2', 'tranquy52003@gmail.com', '0375284572', 'admin/public/uploads/avt_zalo.jpg', 'Toàn quyền', 'Hà Nội', NULL, NULL),
+(2, 'Nguyễn Hoàng Anh', 'Quycute2003', '25d55ad283aa400af464c76d713c07ad', 'tranquy52003@gmail.com', '0375284572', 'admin/public/uploads/avt_hoanganh.jpg', 'QL sale', 'Hà Nội', 14, 'Quycute2003'),
+(8, 'Phạm Tiến Đạt', 'Quycute2003', '25d55ad283aa400af464c76d713c07ad', 'tranquy52003@gmail.com', '0375284572', 'admin/public/uploads/avt_dat.jpg', 'QL giao diện', 'Thái Bình', 14, 'Quycute2003'),
+(9, 'Trần Văn Hùng', 'Quycute2003', '25d55ad283aa400af464c76d713c07ad', 'tranquy52003@gmail.com', '0375284572', 'admin/public/uploads/avt_hung.jpg', 'QL khách hàng', 'Thanh Hóa', 14, 'Quycute2003'),
+(10, 'Hoàng Minh Ngọc', 'Quycute2003', '25d55ad283aa400af464c76d713c07ad', 'tranquy52003@gmail.com', '0375284572', 'admin/public/uploads/avt_ngoc.jpg', 'QL sale', 'Hà Nội', 14, 'Quycute2003');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -245,13 +246,13 @@ ALTER TABLE `tbl_hotel`
 -- AUTO_INCREMENT cho bảng `tbl_order_coin`
 --
 ALTER TABLE `tbl_order_coin`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_order_room`
 --
 ALTER TABLE `tbl_order_room`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_room`
@@ -263,7 +264,7 @@ ALTER TABLE `tbl_room`
 -- AUTO_INCREMENT cho bảng `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
