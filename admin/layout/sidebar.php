@@ -45,8 +45,8 @@
             </a>
             <i class="arrow fas fa-angle-right py-1"></i>
             <ul class="sub-menu">
+                <li><a href="?mod=guest&action=list_order_coin">Danh sách nạp coin</a></li>
                 <li><a href="?mod=guest&action=index">Danh sách khách hàng</a></li>
-                <li><a href="?mod=guest&action=list_order_coin">Đơn nạp Coin</a></li>
             </ul>
         </li>
         <li class="nav-link">
@@ -54,13 +54,13 @@
                 <div class="nav-link-icon d-inline-flex">
                     <i class="far fa-folder"></i>
                 </div>
-                Nhân viên
+                <a href="?mod=staff&action=index">Nhân viên</a>
             </a>
             <i class="arrow fas fa-angle-right py-1"></i>
 
             <ul class="sub-menu">
-                <li><a href="?view=add-user">Thêm nhân viên</a></li>
-                <li><a href="?view=add-user">Danh sách nhân viên</a></li>
+                <li><a href="?mod=staff&action=add_staff">Thêm nhân viên</a></li>
+                <li><a href="?mod=staff&action=index">Danh sách nhân viên</a></li>
                 <li><a href="?view=add-user">Chấm công ngày</a></li>
                 <li><a href="?view=list-user">Tính lương nhân viên</a></li>
             </ul>

@@ -43,11 +43,11 @@ function rechargeAction()
         'status' => 1
     );
     db_update('tbl_order_coin', $data, "`id`=$id");
-    redirect('?mod=guest&action=index');
+    redirect('?mod=guest&action=list_order_coin');
 }
 function deleteAction()
 {
     $id = $_GET['id'];
     db_delete('tbl_order_coin',  "`id`=$id");
-    redirect('?mod=guest&action=index');
+    redirect('?mod=guest&action=list_order_coin');
 }

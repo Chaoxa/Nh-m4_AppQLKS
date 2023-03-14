@@ -15,6 +15,6 @@ call_function(array('construct', $action_name));
 
 
 
-if (empty($_SESSION['is_login']) and get_action() != 'login') {
+if (empty($_SESSION['admin']['is_login']) and get_action() != 'login') {
     header("location:?mod=users&action=login");
 }

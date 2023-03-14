@@ -15,7 +15,7 @@ session_start();
 
 function is_login()
 {
-    if (isset($_SESSION['is_login']))
+    if (isset($_SESSION['admin']['is_login']))
         return true;
     return false;
 }
@@ -23,8 +23,8 @@ function is_login()
 //trả về username của người login
 function user_login()
 {
-    if (!empty($_SESSION['user_login']))
-        return $_SESSION['user_login'];
+    if (!empty($_SESSION['admin']['user_login']))
+        return $_SESSION['admin']['user_login'];
     return false;
 }
 

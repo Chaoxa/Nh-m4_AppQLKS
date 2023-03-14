@@ -35,8 +35,8 @@ function loginAction()
                 setcookie('user_login', $username, time() + 3600);
             }
             if (check_login($username, $password)) {
-                $_SESSION['is_login'] = true;
-                $_SESSION['user_login'] = $username;
+                $_SESSION['admin']['is_login'] = true;
+                $_SESSION['admin']['user_login'] = $username;
                 redirect("?mod=home&action=index");
             } else {
                 $error['login'] = 'Tài khoản hoặc mật khẩu không chính xác';
@@ -50,6 +50,6 @@ function logoutAction()
 {
     // setcookie('is_login',true,time()-3600);
     // setcookie('user_login',$username,time()-3600);
-    unset($_SESSION['is_login']);
-    unset($_SESSION['user_login']);
+    unset($_SESSION['admin']['is_login']);
+    unset($_SESSION['admin']['user_login']);
 }

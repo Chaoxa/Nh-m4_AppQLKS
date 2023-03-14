@@ -20,8 +20,7 @@ function Validator(options) {
       errorElement.innerText = errorMessage;
       inputElement.parentElement
         .querySelector(".form-message")
-        .classList.add("text-danger");
-      console.log(inputElement.parentElement);
+        .classList.add(options.color);
     } else {
       errorElement.innerText = "";
       inputElement.parentElement
